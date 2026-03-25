@@ -11,12 +11,11 @@
         }
 
         /* --- Éléments d'angle --- */
-        .corner { position: absolute; padding: 25px; font-size: 2rem; letter-spacing: 1px; }
+        .corner { position: absolute; padding: 25px; font-size: 1rem; letter-spacing: -1px; }
         .top-left { top: 0; left: 0; }
         .top-left a { color: #ffffff; text-decoration: none; padding: 5px 10px; transition: 0.3s; }
-        .top-left a:hover { color: #ffffff; border-color: #ffffff; box-shadow: 0 0 10px #ffffff; }
         
-        .top-right { top: 0; right: 0; font-size: 3rem; color: #ffffff; opacity: 1; }
+        .top-right { top: 0; right: 0; font-size: 3rem; color: #ffffff; opacity: 1; font-weight: 900;}
         
         .bottom-left { bottom: 0; left: 0; color: #fffffff; font-weight: 900; }
         .bottom-right { bottom: 0; right: 0; color: #ffffff; }
@@ -63,9 +62,10 @@
 
     <div class="glitch-wrapper">
         <h1 class="glitch" data-text="404 ERROR">404 ERROR</h1>
-        <p>CRITICAL_SYSTEM_FAILURE</p>
-        <p>Oops! The page you're looking for is not here.</p>
-        <p>Go Back to Home</p>
+        <p>CRITICAL_SYSTEM_FAILURE
+        Oops! The page you're looking for is not here.
+        Go Back to Home
+        </p>
     </div>
 
     <div class="corner bottom-left" id="timer">12:00:00</div>
@@ -99,7 +99,26 @@
         setInterval(updateTimer, 10);
 
         // Date
-        document.getElementById('date').innerText = new Date().toLocaleDateString('fr-FR');
-    </script>
+        const dateElement = document.getElementById('date');
+        const today = new Date().toLocaleDateString('fr-FR');
+
+        fetch('https://ipapi.co/json/')
+            .then(response => {
+                if (!response.ok) throw new Error();
+                return response.json();
+            })
+            .then(data => {
+                // Affiche la ville et le pays si trouvés, sinon ERROR
+                if (data.ip && data.city) {
+                    dateElement.innerText = `${today} | ${data.ip.toUpperCase()}, ${data.city.toUpperCase()}`;
+                } else {
+                    dateElement.innerText = `${today} | ERROR`;
+                }
+            })
+            .catch(() => {
+                // En cas d'AdBlocker ou de problème réseau
+                dateElement.innerText = `${today} | ERROR`;
+            });        
+     </script>
 </body>
 </html>
