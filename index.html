@@ -106,13 +106,15 @@
             
             let isNegative = diff < 0;
             let absDiff = Math.abs(diff);
-            
-            let m = Math.floor(absDiff / 60000);
+
+            let h = Math.floor(absDiff / 3600000);
+            let m = Math.floor((absDiff % 3600000) / 60000);
             let s = Math.floor((absDiff % 60000) / 1000);
             let ms = Math.floor((absDiff % 1000) / 10);
 
-            timerElement.innerText = 
+        timerElement.innerText = 
                 (isNegative ? "-" : "") + 
+                (h < 10 ? '0' : '') + h + ":" + 
                 (m < 10 ? '0' : '') + m + ":" + 
                 (s < 10 ? '0' : '') + s + ":" + 
                 (ms < 10 ? '0' : '') + ms;
