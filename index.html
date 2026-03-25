@@ -89,8 +89,7 @@
     </div>
 
     <div class="corner bottom-left">
-        <span class="timer-label">Time before the website's implosion :</span>
-        <div id="timer">00/12:00:00</div>
+        Time before the website's implosion : <span id="timer">00:12:00:00</span>
     </div>
 
     <div class="corner bottom-right" id="date"></div>
@@ -98,7 +97,7 @@
     <script>
         // Timer
         let startTime = Date.now();
-        const duration = 0 * 12 * 60 * 1000; 
+        const duration = 12 * 60 * 1000; 
         const timerElement = document.getElementById('timer');
         
        function updateTimer() {
