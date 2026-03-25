@@ -63,7 +63,7 @@
 </head> 
 <body>
     <div class="corner top-left">
-        <a href="home.html">172.16.1.195/home.html</a>
+        <a href="wrongway.html">172.16.1.195/home.html</a>
     </div>
 
     <div class="corner top-right">B</div>
@@ -72,7 +72,7 @@
         <h1 class="glitch" data-text="404 ERROR">404 ERROR</h1>
         <div class="status-text">
             <p>CRITICAL_SYSTEM_FAILURE</p>
-            <p>Oops! The page you're looking for is not here. Go Back to Home !</p>  
+            <p>Oops! The page you're looking for is not here. Go Back to <a href="home.html">Home</a>!</p>  
         </div>   
     </div>
 
@@ -95,7 +95,7 @@
             
             let m = Math.floor(absDiff / 60000);
             let s = Math.floor((absDiff % 60000) / 1000);
-            let ms = Math.floor((absDiff % 1000) / 10); // On garde 2 chiffres pour les ms
+            let ms = Math.floor((absDiff % 1000) / 10);
 
             timerElement.innerText = 
                 (isNegative ? "-" : "") + 
