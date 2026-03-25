@@ -2,11 +2,16 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>ACCESS DENIED</title>
+    <title>System Trace</title>
     <style>
         body { 
-            background: #000; color: #ffffff; font-family: 'Courier New', monospace; 
-            margin: 0; padding: 20px; height: 100vh;
+            background: #000000; 
+            color: #ffffff; 
+            font-family: 'Courier New', monospace; 
+            margin: 0; 
+            padding: 40px; 
+            height: 100vh;
+            overflow: hidden;
         }
 
         .container {
@@ -15,39 +20,83 @@
             gap: 8px;
         }
 
+        /* --- Effet Glitch pour le Error Code --- */
+        .glitch-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
         .status-code {
             font-weight: 900;
-            font-size: 1.2rem;
-            margin-botom: 10px;
+            font-size: 1.5rem;
+            position: relative;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .status-code::before, .status-code::after {
+            content: "ERROR_CODE: WRONG_WAY"; 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: black;
+        }
+
+        .status-code::before {
+            left: 2px;
+            text-shadow: -1px 0 #CF7AFF;
+            clip: rect(10px, 9999px, 20px, 0);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+
+        .status-code::after {
+            left: -2px;
+            text-shadow: 1px 0 #ffffff;
+            clip: rect(25px, 9999px, 35px, 0);
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(5px, 9999px, 15px, 0); transform: skew(0.2deg); }
+            50% { clip: rect(20px, 9999px, 30px, 0); transform: skew(-0.2deg); }
+            100% { clip: rect(10px, 9999px, 25px, 0); transform: skew(0.1deg); }
         }
 
         .log-entry {
             font-size: 0.85rem;
-            letter-spacing: -1px;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            white-space: pre; /* Garde les points d'alignement */
         }
 
-        back-link {
+        .back-link {
             color: #ffffff;
             text-decoration: none;
-            margin-top: 30px;
+            margin-top: 40px;
             display: inline-block;
-            padding: 5px 10px;
+            font-size: 0.8rem;
+            border: 1px solid #333;
+            padding: 8px 15px;
+            transition: 0.3s;
+            width: fit-content;
         }
 
-        back-link:hover {
-            background: #fff;
-            color: #000;
+        .back-link:hover {
+            background: #ffffff;
+            color: #000000;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="status-code">ERROR_CODE: WRONG_WAY</div>
-        <div class="log-entry">> INTRUSION_DETECTION_SYSTEM: ACTIVE</div>
-        <div class="log-entry">> TRACING_ORIGIN... DONE</div>
-        <div class="log-entry">> LOGGING_REQUEST_METADATA... SUCCESS</div>
-        <div class="log-entry">> HONEYPOT_TRIGGERED: 172.16.1.195</div>
+        <div class="glitch-wrapper">
+            <div class="status-code">ERROR_CODE: WRONG_WAY</div>
+        </div>
+        
+        <div class="log-entry">> INTRUSION_DETECTION_SYSTEM:..... ACTIVE</div>
+        <div class="log-entry">> TRACING_ORIGIN............... DONE</div>
+        <div class="log-entry">> LOGGING_REQUEST_METADATA............... SUCCESS</div>
+        <div class="log-entry">> HONEYPOT_TRIGGERED:....... 172.16.1.195</div>
+        <div class="log-entry">> ACCESS_DENIED_</div>
         
         <a href="index.html" class="back-link">RETURN_TO_SAFETY</a>
     </div>
