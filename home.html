@@ -27,12 +27,14 @@
         .job-date { color: #666; font-size: 0.8rem; margin-bottom: 5px; }
         .job-desc { color: #ccc; margin-top: 5px; font-size: 0.95rem; }
 
-        .section-block { margin-bottom: 80px; display: none; }
-        
+        /* --- CONTENEUR DE SECTION --- */
+        .section-block { 
+            margin-bottom: 80px;
+        }
+            
         /* --- Espacement Compétences --- */
         .skills-section { margin-top: 20px; margin-bottom: 15px; }
 
-        .section-block { margin-bottom: 80px; display: none; }
 
         /* --- Section Passions --- */
         .passions-container { margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap; }
@@ -60,49 +62,55 @@
         
         <div class="section" id="content">
             <div class="command"><span class="prompt">guest@b-system:~$</span> cat profile.txt</div>
-            
-            <div class="title">Parcours Professionnel</div>
 
-            <div class="job-card">
-                <div class="job-company">M:armites - ALTERNANT SYSADMIN | CYBER</div>
-                <div class="job-date">Novembre 2025 - Septembre 2026</div>
-                <div class="job-desc">Participation à l’administration et à l’optimisation des systèmes et réseaux, incluant l’analyse des besoins utilisateurs, la gestion des incidents, la cybersécurité, ainsi que la R&D de nouvelles solutions.</div>
-            </div>
+            <div class="section-block">
+                <div class="title">Parcours Professionnel</div>
 
-            <div class="job-card">
-                <div class="job-company">Union Bancaire Privé (UBP) - CONSULTANT INFORMATIQUE | SERVICE DESK NIVEAU 1</div>
-                <div class="job-date">Décembre 2024 - Septembre 2025</div>
-                <div class="job-desc">Assurer le support informatique de premier niveau, incluant la prise en charge des utilisateurs, la gestion et le suivi des incidents, l’administration des comptes, le dépannage (à distance ou sur site) ainsi que la maintenance et la documentation des systèmes.</div>
-            </div>
+                <div class="job-card">
+                    <div class="job-company">M:armites - ALTERNANT SYSADMIN | CYBER</div>
+                    <div class="job-date">Novembre 2025 - Septembre 2026</div>
+                    <div class="job-desc">Participation à l’administration et à l’optimisation des systèmes et réseaux, incluant l’analyse des besoins utilisateurs, la gestion des incidents, la cybersécurité, ainsi que la R&D de nouvelles solutions.</div>
+                </div>
 
-            <div class="job-card">
-                <div class="job-company">XEFI - STAGIAIRE HELPDESK</div>
-                <div class="job-date">Mars 2024 - Avril 2024</div>
-                <div class="job-desc">Réalisation de prestations standards telles que la configuration, la livraison, l’installation, le dépannage et la mise en service de tout types de matériels informatiques.</div>
-            </div>
+                <div class="job-card">
+                    <div class="job-company">Union Bancaire Privé (UBP) - CONSULTANT INFORMATIQUE | SERVICE DESK NIVEAU 1</div>
+                    <div class="job-date">Décembre 2024 - Septembre 2025</div>
+                    <div class="job-desc">Assurer le support informatique de premier niveau, incluant la prise en charge des utilisateurs, la gestion et le suivi des incidents, l’administration des comptes, le dépannage (à distance ou sur site) ainsi que la maintenance et la documentation des systèmes.</div>
+                </div>
 
-            <div class="job-card">
-                <div class="job-company">2linfo - STAGIAIRE ADMINISTRATEUR SYSTÈMES ET RÉSEAUX</div>
-                <div class="job-date">Mars 2023 - Avril 2023</div>
-                <div class="job-desc">Participation au développement et au déploiement de solutions informatiques et télécoms, incluant la supervision des réseaux, le support client, ainsi que la contribution aux audits et projets de téléphonie sur IP.</div>
-            </div>
-            
-            <div class="skills-section">
-                <div class="title">Compétences_Clés</div>
-                <div class="job-desc">
-                    <p>> <strong>SÉCURITÉ & PROTECTION</strong> : Fortinet, Mailinblack,Datto, Veeam, Comodo BackUp, Active Directory.</p>
-                    <p>> <strong>ADMINISTRATION & SUPERVISION</strong> : Centreon, Zabbix, SCCM, Windows, Linux, Pack Office 365, Exchange.</p>
-                    <p>> <strong>METHODOLOGIE & SUPPORT</strong> : Jira, BMC Ready, Support N1/N2, Documentation.</p>
+                <div class="job-card">
+                    <div class="job-company">XEFI - STAGIAIRE HELPDESK</div>
+                    <div class="job-date">Mars 2024 - Avril 2024</div>
+                    <div class="job-desc">Réalisation de prestations standards telles que la configuration, la livraison, l’installation, le dépannage et la mise en service de tout types de matériels informatiques.</div>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-company">2linfo - STAGIAIRE ADMINISTRATEUR SYSTÈMES ET RÉSEAUX</div>
+                    <div class="job-date">Mars 2023 - Avril 2023</div>
+                    <div class="job-desc">Participation au développement et au déploiement de solutions informatiques et télécoms, incluant la supervision des réseaux, le support client, ainsi que la contribution aux audits et projets de téléphonie sur IP.</div>
                 </div>
             </div>
 
-            <div class="title">Passions</div>
-            <div class="passions-container">
-                <div class="passion-tag">#Volleyball</div>
-                <div class="passion-tag">#Jeux-vidéo</div>
-                <div class="passion-tag">#Musique</div>
-                <div class="passion-tag">#Sport</div>
+            <div class="section-block">
+                <div class="skills-section">
+                    <div class="title">Compétences_Clés</div>
+                    <div class="job-desc">
+                        <p>> <strong>SÉCURITÉ & PROTECTION</strong> : Fortinet, Mailinblack,Datto, Veeam, Comodo BackUp, Active Directory.</p>
+                        <p>> <strong>ADMINISTRATION & SUPERVISION</strong> : Centreon, Zabbix, SCCM, Windows, Linux, Pack Office 365, Exchange.</p>
+                        <p>> <strong>METHODOLOGIE & SUPPORT</strong> : Jira, BMC Ready, Support N1/N2, Documentation.</p>
+                    </div>
+                </div>
             </div>
+
+            <div class="section-block">
+                <div class="title">Passions</div>
+                <div class="passions-container">
+                    <div class="passion-tag">#Volleyball</div>
+                    <div class="passion-tag">#Jeux-vidéo</div>
+                    <div class="passion-tag">#Musique</div>
+                    <div class="passion-tag">#Sport</div>
+                </div>
+             </div>
         </div>
     </div>
 
