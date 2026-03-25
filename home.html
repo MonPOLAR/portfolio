@@ -16,7 +16,7 @@
 
         /* --- Commande Prompt --- */
         .prompt { color: #CF7AFF; font-weight: bold; font-size: 0.8rem; }
-        .command { color: #fff; margin-bottom: 40px; font-size: 0.8rem; opacity: 0.8; }
+        .command { color: #fff; margin-bottom: 20px; font-size: 0.8rem; }
 
         /* --- Structure des Sections --- */
         .section { margin-bottom: 80px; display: none; }
@@ -27,7 +27,7 @@
         .job-date { color: #666; font-size: 0.8rem; margin-bottom: 5px; }
         .job-desc { color: #ccc; margin-top: 5px; font-size: 0.95rem; }
 
-        /* --- CONTENEUR DE SECTION --- */
+        /* --- Conteneur des Sections --- */
         .section-block { 
             margin-bottom: 80px;
         }
@@ -59,10 +59,12 @@
 
     <div id="terminal">
         <div id="loading-text"></div>
-        
-        <div class="section" id="content">
-            <div class="command"><span class="prompt">guest@b-system:~$</span> cat profile.txt</div>
 
+        <div class="section-block">
+            <div class="section" id="content">
+                <div class="command"><span class="prompt">guest@b-system:~$</span> cat profile.txt</div>
+        </div>
+                
             <div class="section-block">
                 <div class="title">Parcours Professionnel</div>
 
