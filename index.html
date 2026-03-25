@@ -4,40 +4,57 @@
     <meta charset="UTF-8">
     <title>404 Not Found</title>
     <style>
-        :root { --glitch-color: #00ff00; }
         body { 
-            background: #000; color: white; font-family: 'Courier New', monospace;
+            background: #000; color: #00ff00; font-family: 'Courier New', monospace;
             height: 100vh; margin: 0; overflow: hidden; display: flex;
             justify-content: center; align-items: center; position: relative;
         }
 
         /* --- Éléments d'angle --- */
-        .corner { position: absolute; padding: 20px; font-size: 1.2rem; }
+        .corner { position: absolute; padding: 25px; font-size: 1rem; letter-spacing: 1px; }
         .top-left { top: 0; left: 0; }
-        .top-left a { color: #555; text-decoration: none; transition: 0.3s; }
-        .top-left a:hover { color: var(--glitch-color); text-shadow: 0 0 5px var(--glitch-color); }
-        .top-right { top: 0; right: 0; font-weight: bold; font-size: 2rem; }
-        .bottom-left { bottom: 0; left: 0; color: #ff0000; }
-        .bottom-right { bottom: 0; right: 0; color: #888; }
+        .top-left a { color: #008800; text-decoration: none; border: 1px solid #004400; padding: 5px 10px; transition: 0.3s; }
+        .top-left a:hover { color: #00ff00; border-color: #00ff00; box-shadow: 0 0 10px #00ff00; }
+        
+        .top-right { top: 0; right: 0; font-size: 2.5rem; color: #00ff00; opacity: 0.8; }
+        
+        .bottom-left { bottom: 0; left: 0; color: #ff3333; font-weight: bold; }
+        .bottom-right { bottom: 0; right: 0; color: #008800; }
 
-        /* --- Effet Glitch 404 --- */
-        .glitch-wrapper { text-align: center; }
+        /* --- Effet Glitch Futuriste --- */
+        .glitch-container { text-align: center; position: relative; }
+        
         .glitch {
-            font-size: 10rem; font-weight: bold; position: relative;
-            text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.025em -0.05em 0 rgba(0,255,0,.75), 0.025em 0.05em 0 rgba(0,0,255,.75);
-            animation: glitch 500ms infinite;
+            font-size: 10rem; font-weight: 900; margin: 0;
+            position: relative; color: #00ff00;
+            letter-spacing: -5px;
         }
-        @keyframes glitch {
-            0% { text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.05em -0.025em 0 rgba(0,255,0,.75), -0.025em 0.05em 0 rgba(0,0,255,.75); }
-            14% { text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.05em -0.025em 0 rgba(0,255,0,.75), -0.025em 0.05em 0 rgba(0,0,255,.75); }
-            15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,.75), 0.025em 0.025em 0 rgba(0,255,0,.75), -0.05em -0.05em 0 rgba(0,0,255,.75); }
-            /* ... etc pour simuler le glitch ... */
-            100% { text-shadow: -0.025em 0 0 rgba(255,0,0,.75), -0.025em -0.025em 0 rgba(0,255,0,.75), -0.025em -0.05em 0 rgba(0,0,255,.75); }
-        }
-    </style>
-</head>
-<body>
 
+        /* Simulation de décalage de lignes sans clignotement */
+        .glitch::before, .glitch::after {
+            content: "404"; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: black; clip: rect(0, 900px, 0, 0); 
+        }
+
+        .glitch:hover::before {
+            clip: rect(44px, 9999px, 56px, 0);
+            left: -2px; text-shadow: -2px 0 #00ff00;
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(10px, 9999px, 20px, 0); transform: skew(0.5deg); }
+            20% { clip: rect(30px, 9999px, 40px, 0); transform: skew(-0.5deg); }
+            40% { clip: rect(60px, 9999px, 70px, 0); transform: skew(0.8deg); }
+            60% { clip: rect(15px, 9999px, 25px, 0); transform: skew(-0.2deg); }
+            80% { clip: rect(80px, 9999px, 90px, 0); transform: skew(0.4deg); }
+            100% { clip: rect(45px, 9999px, 55px, 0); transform: skew(-0.8deg); }
+        }
+
+        .status { font-size: 0.9rem; color: #008800; letter-spacing: 4px; margin-top: -10px; }
+    </style>
+</head> 
+<body>
     <div class="corner top-left">
         <a href="home.html">172.16.1.195/home.html</a>
     </div>
@@ -45,29 +62,42 @@
     <div class="corner top-right">B</div>
 
     <div class="glitch-wrapper">
-        <h1 class="glitch" data-text="404">404</h1>
+        <h1 class="glitch" data-text="404 ERROR">404 ERROR</h1>
         <p>CRITICAL_SYSTEM_FAILURE</p>
+        <p>Oops! The page you're looking for is not here.</p>
+        <a href="/">Go Back to Home</a>
     </div>
 
-    <div class="corner bottom-left" id="timer">27:00</div>
+    <div class="corner bottom-left" id="timer">12:00</div>
 
     <div class="corner bottom-right" id="date"></div>
 
     <script>
-        // Gestion du Timer (27 min -> -infini)
-        let seconds = 27 * 60;
+        // Timer
+        let seconds = 12 * 60 * 1000;
         const timerElement = document.getElementById('timer');
         
-        setInterval(() => {
-            seconds--;
-            const absSec = Math.abs(seconds);
-            const m = Math.floor(absSec / 60);
-            const s = absSec % 60;
-            const sign = seconds < 0 ? "-" : "";
-            timerElement.innerText = `${sign}${m}:${s < 10 ? '0' : ''}${s}`;
-        }, 1000);
+       function updateTimer() {
+            let now = Date.now();
+            let diff = duration - (now - startTime);
+            
+            let isNegative = diff < 0;
+            let absDiff = Math.abs(diff);
+            
+            let m = Math.floor(absDiff / 60000);
+            let s = Math.floor((absDiff % 60000) / 1000);
+            let ms = Math.floor((absDiff % 1000) / 10); // On garde 2 chiffres pour les ms
 
-        // Gestion de la Date
+            timerElement.innerText = 
+                (isNegative ? "-" : "") + 
+                (m < 10 ? '0' : '') + m + ":" + 
+                (s < 10 ? '0' : '') + s + ":" + 
+                (ms < 10 ? '0' : '') + ms;
+        }
+
+        setInterval(updateTimer, 10);
+
+        // Date
         document.getElementById('date').innerText = new Date().toLocaleDateString('fr-FR');
     </script>
 </body>
