@@ -11,17 +11,19 @@
         }
 
         /* --- Éléments d'angle --- */
-        .corner { position: absolute; padding: 25px; font-size: 1rem; letter-spacing: -1px; }
+        .corner { position: absolute; padding: 40px; font-size: 1rem; letter-spacing: -1px; }
+        
         .top-left { top: 0; left: 0; }
         .top-left a { color: #ffffff; text-decoration: none; padding: 5px 10px; transition: 0.3s; }
         
         .top-right { top: 0; right: 0; font-size: 3rem; color: #ffffff; opacity: 1; font-weight: 900;}
         
-        .bottom-left { bottom: 0; left: 0; color: #fffffff; font-weight: 900; }
+        .bottom-left { bottom: 0; left: 0; color: #ffffff; font-weight: 900; }
+        
         .bottom-right { bottom: 0; right: 0; color: #ffffff; }
 
         /* --- Effet Glitch Futuriste --- */
-        .glitch-container { text-align: center; position: relative; }
+        .glitch-wrapper { text-align: center; position: relative; }
         
         .glitch {
             font-size: 8rem; font-weight: 900; margin: 0;
@@ -35,10 +37,16 @@
             background: black; clip: rect(0, 900px, 0, 0); 
         }
 
-        .glitch:hover::before {
+        .glitch::before {
             clip: rect(44px, 9999px, 56px, 0);
-            left: -2px; text-shadow: -2px 0 #00ff00;
+            left: -2px; text-shadow: -2px 0 #8a2be2;
             animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            clip: rect(44px, 9999px, 56px, 0);
+            left: -2px; text-shadow: -2px 0 #ffffff;
+            animation: glitch-anim 3s infinite linear alternate-reverse;
         }
 
         @keyframes glitch-anim {
@@ -50,7 +58,7 @@
             100% { clip: rect(45px, 9999px, 55px, 0); transform: skew(-0.8deg); }
         }
 
-        .status { font-size: 0.9rem; color: #008800; letter-spacing: 4px; margin-top: -10px; }
+        .status-text { font-size: 0.9rem; color: #8a2be2; letter-spacing: 4px; margin-top: -10px; }
     </style>
 </head> 
 <body>
@@ -60,12 +68,12 @@
 
     <div class="corner top-right">B</div>
 
-    <div class="glitch-wrapper">
-        <center>
-            <h1 class="glitch" data-text="404 ERROR">404 ERROR</h1>
-                <p>CRITICAL_SYSTEM_FAILURE</p>
-                <p>Oops! The page you're looking for is not here. Go Back to Home !</p>  
-        </center>   
+   <div class="glitch-wrapper">
+        <h1 class="glitch" data-text="404 ERROR">404 ERROR</h1>
+        <div class="status-text">
+            <p>CRITICAL_SYSTEM_FAILURE</p>
+            <p>Oops! The page you're looking for is not here. Go Back to Home !</p>  
+        </div>   
     </div>
 
     <div class="corner bottom-left" id="timer">12:00:00</div>
