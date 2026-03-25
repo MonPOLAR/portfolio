@@ -4,16 +4,71 @@
     <meta charset="UTF-8">
     <title>404 Not Found</title>
     <style>
-        body { background: #000; color: #fff; font-family: monospace; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .error-code { font-size: 8rem; margin: 0; }
+        :root { --glitch-color: #00ff00; }
+        body { 
+            background: #000; color: white; font-family: 'Courier New', monospace;
+            height: 100vh; margin: 0; overflow: hidden; display: flex;
+            justify-content: center; align-items: center; position: relative;
+        }
+
+        /* --- Éléments d'angle --- */
+        .corner { position: absolute; padding: 20px; font-size: 1.2rem; }
+        .top-left { top: 0; left: 0; }
+        .top-left a { color: #555; text-decoration: none; transition: 0.3s; }
+        .top-left a:hover { color: var(--glitch-color); text-shadow: 0 0 5px var(--glitch-color); }
+        .top-right { top: 0; right: 0; font-weight: bold; font-size: 2rem; }
+        .bottom-left { bottom: 0; left: 0; color: #ff0000; }
+        .bottom-right { bottom: 0; right: 0; color: #888; }
+
+        /* --- Effet Glitch 404 --- */
+        .glitch-wrapper { text-align: center; }
+        .glitch {
+            font-size: 10rem; font-weight: bold; position: relative;
+            text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.025em -0.05em 0 rgba(0,255,0,.75), 0.025em 0.05em 0 rgba(0,0,255,.75);
+            animation: glitch 500ms infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.05em -0.025em 0 rgba(0,255,0,.75), -0.025em 0.05em 0 rgba(0,0,255,.75); }
+            14% { text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.05em -0.025em 0 rgba(0,255,0,.75), -0.025em 0.05em 0 rgba(0,0,255,.75); }
+            15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,.75), 0.025em 0.025em 0 rgba(0,255,0,.75), -0.05em -0.05em 0 rgba(0,0,255,.75); }
+            /* ... etc pour simuler le glitch ... */
+            100% { text-shadow: -0.025em 0 0 rgba(255,0,0,.75), -0.025em -0.025em 0 rgba(0,255,0,.75), -0.025em -0.05em 0 rgba(0,0,255,.75); }
+        }
     </style>
 </head>
 <body>
-    <h1 class="error-code">404</h1>
-    <p>Not Found: The requested URL was not found on this server.</p>
-    <hr width="30%">
-    <p>Apache/2.4.41 (Ubuntu) Server at localhost Port 80</p>
-    
-    <a href="home.html" class="secret-link">.</a>
+
+    <div class="corner top-left">
+        <a href="home.html">172.16.1.195/home.html</a>
+    </div>
+
+    <div class="corner top-right">B</div>
+
+    <div class="glitch-wrapper">
+        <h1 class="glitch" data-text="404">404</h1>
+        <p>CRITICAL_SYSTEM_FAILURE</p>
+    </div>
+
+    <div class="corner bottom-left" id="timer">27:00</div>
+
+    <div class="corner bottom-right" id="date"></div>
+
+    <script>
+        // Gestion du Timer (27 min -> -infini)
+        let seconds = 27 * 60;
+        const timerElement = document.getElementById('timer');
+        
+        setInterval(() => {
+            seconds--;
+            const absSec = Math.abs(seconds);
+            const m = Math.floor(absSec / 60);
+            const s = absSec % 60;
+            const sign = seconds < 0 ? "-" : "";
+            timerElement.innerText = `${sign}${m}:${s < 10 ? '0' : ''}${s}`;
+        }, 1000);
+
+        // Gestion de la Date
+        document.getElementById('date').innerText = new Date().toLocaleDateString('fr-FR');
+    </script>
 </body>
 </html>
