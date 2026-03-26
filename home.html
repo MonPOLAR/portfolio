@@ -111,10 +111,9 @@
             <div class="section-block">
                 <div class="title">Passions</div>
                 <div class="passions-container">
-                    <div class="passion-tag">#Volleyball</div>
-                    <div class="passion-tag">#Jeux-vidéo</div>
-                    <div class="passion-tag">#Musique</div>
-                    <div class="passion-tag">#Sport</div>
+                    <div class="passion-tag" data-info="Le sport occupe également une place importante dans ma vie. Que ce soit le volleyball, la course à pied ou la musculation, j'aime me dépenser physiquement et repousser mes limites. Le sport me permet de rester en forme et de me vider l'esprit. Chaque jour, je me lance des nouveaux défis que je souhaite relever pour toujours m’améliorer dans ce que je fais.">#Volleyball</div>
+                    <div class="passion-tag" data-info="En dehors de ma passion pour la musique et pour l’informatique, j'ai également une grande affinité pour les jeux vidéo. Depuis mon enfance, je suis fasciné par l'univers des jeux, que ce soit pour leur histoire captivante, leurs graphismes époustouflants ou simplement pour le plaisir de jouer avec des amis. Les jeux vidéo sont pour moi une source de divertissement infinie et une façon fantastique de stimuler ma créativité.">#Jeux-vidéo</div>
+                    <div class="passion-tag" data-info="Passionné par la musique et le beatmaking, je passe une bonne partie de mon temps libre à composer des sons et à explorer de nouveaux genres musicaux. Rien ne me motive plus que de créer une mélodie entraînante ou de trouver le rythme parfait pour une chanson. J’ai au fond de moi toujours voulu vivre de ma musique et pouvoir placer mes artistes préférés qui me donnent beaucoup d’inspiration.">#Musique</div>
                 </div>
              </div>
         </div>
@@ -146,6 +145,24 @@
                 }, 400);
             }
         }
+
+        // Gestion du clic sur les passions
+        const tags = document.querySelectorAll('.passion-tag');
+        const descriptionBox = document.getElementById('passion-description');
+
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                // Retirer la classe active des autres tags
+                tags.forEach(t => t.classList.remove('active'));
+        
+                // Ajouter la classe active au tag cliqué
+                tag.classList.add('active');
+        
+                // Afficher la description avec un petit effet
+                descriptionBox.style.display = 'block';
+                descriptionBox.innerText = tag.getAttribute('data-info');
+            });
+        });
 
         typeLog();
     </script>
