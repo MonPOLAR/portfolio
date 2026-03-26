@@ -50,6 +50,36 @@
             text-transform: lowercase;
         }
 
+        /* Style de la boîte de description des passions */
+        #passion-description {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px dashed #CF7AFF;
+            background: rgba(207, 122, 255, 0.05);
+            color: #ccc;
+            font-size: 0.9rem;
+            display: none; /* Caché par défaut */
+            min-height: 50px;
+        }
+
+        /* Style pour montrer que les tags sont cliquables */
+        .passion-tag { 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .passion-tag:hover {
+            background: #CF7AFF;
+            color: #000;
+        }
+
+        /* Classe pour le tag sélectionné */
+        .passion-tag.active {
+            background: #CF7AFF;
+            color: #000;
+            box-shadow: 0 0 10px #CF7AFF;
+        }
+
         #loading-text { margin-bottom: 20px; color: #fff; font-size: 0.9rem; }
     </style>
 </head>
