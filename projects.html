@@ -15,7 +15,29 @@
         nav a { color: #CF7AFF; text-decoration: none; margin-right: 25px; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { color: #fff; text-shadow: 0 0 8px #CF7AFF; }
 
-        .corner-b { font-size: 3rem; color: #ffffff; font-weight: 900; line-height: 1; }
+        /* --- Bouton Exit (Remplace Corner-B) --- */
+        .nav-exit { 
+        font-size: 1.2rem; /* Plus petit que le B pour rester élégant */
+        color: #444;       /* Gris sombre par défaut */
+        font-weight: bold;
+        text-decoration: none;
+        line-height: 1;
+        transition: 0.3s;
+        cursor: pointer;
+        }
+
+        .nav-exit:hover { 
+        color: #ff4444; 
+        text-shadow: 0 0 10px #ff4444; 
+        transform: scale(1.1); /* Petit effet de zoom au survol */
+        }
+
+        /* Ajustement pour s'assurer que l'alignement reste parfait */
+        .nav-container { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; /* Aligné au centre verticalement */
+        }
 
         /* --- Terminal Logic --- */
         #content { display: none; max-width: 1100px; }
@@ -118,15 +140,15 @@
 <body>
 
     <nav>
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="home.html">> HOME</a>
-                <a href="about.html">> ABOUT</a>
-                <a href="projects.html">> PROJECTS</a>
-            </div>
-            <div class="corner-b">B</div>
+    <div class="nav-container">
+        <div class="nav-links">
+            <a href="home.html">> HOME</a>
+            <a href="about.html">> ABOUT</a>
+            <a href="projects.html">> PROJECTS</a>
         </div>
-    </nav>
+        <a href="index.html" class="nav-exit"> [ EXIT ] </a>
+    </div>
+</nav>
 
     <div id="terminal">
         <div id="loading-text"></div>
