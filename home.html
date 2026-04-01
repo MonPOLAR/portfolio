@@ -15,6 +15,19 @@
         .nav-container { display: flex; justify-content: space-between; align-items: baseline; }
         nav a:hover { color: #fff; text-shadow: 0 0 8px #CF7AFF; }
 
+        /* Style spécifique pour le bouton EXIT */
+        .nav-exit {
+        color: #666 !important; /* Gris discret par défaut */
+        font-weight: bold;
+        margin-right: 40px !important; /* Un peu plus d'espace pour le séparer du reste */
+        }
+
+        .nav-exit:hover {
+        color: #ff4444 !important; /* Devient rouge au survol pour l'effet "Quitter" */
+        text-shadow: 0 0 8px #ff4444 !important;
+        cursor: pointer;
+        }
+
         /* --- B ---*/
         .corner-b { 
         font-size: 3rem; 
@@ -89,15 +102,17 @@
 <body>
 
     <nav>
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="home.html">> HOME</a>
-                <a href="about.html">> ABOUT</a>
-                <a href="projects.html">> PROJECTS</a>
-            </div>
-            <div class="corner-b">B</div>
+    <div class="nav-container">
+        <div class="nav-links">
+            <a href="index.html" class="nav-exit" title="Exit to Boot"> [ EXIT ] </a>
+            
+            <a href="home.html">> HOME</a>
+            <a href="about.html">> ABOUT</a>
+            <a href="projects.html">> PROJECTS</a>
         </div>
-    </nav>
+        <div class="corner-b">B</div>
+    </div>
+</nav>
 
     <div id="terminal">
         <div id="loading-text"></div>
