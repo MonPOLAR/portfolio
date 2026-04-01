@@ -15,26 +15,29 @@
         .nav-container { display: flex; justify-content: space-between; align-items: baseline; }
         nav a:hover { color: #fff; text-shadow: 0 0 8px #CF7AFF; }
 
-        /* Style spécifique pour le bouton EXIT */
-        .nav-exit {
-        color: #666 !important; /* Gris discret par défaut */
+        /* --- Bouton Exit (Remplace Corner-B) --- */
+        .nav-exit { 
+        font-size: 1.2rem; /* Plus petit que le B pour rester élégant */
+        color: #444;       /* Gris sombre par défaut */
         font-weight: bold;
-        margin-right: 40px !important; /* Un peu plus d'espace pour le séparer du reste */
-        }
-
-        .nav-exit:hover {
-        color: #ff4444 !important; /* Devient rouge au survol pour l'effet "Quitter" */
-        text-shadow: 0 0 8px #ff4444 !important;
+        text-decoration: none;
+        line-height: 1;
+        transition: 0.3s;
         cursor: pointer;
         }
 
-        /* --- B ---*/
-        .corner-b { 
-        font-size: 3rem; 
-        color: #ffffff; 
-        font-weight: 900;
-        line-height: 1;
+        .nav-exit:hover { 
+        color: #ff4444; 
+        text-shadow: 0 0 10px #ff4444; 
+        transform: scale(1.1); /* Petit effet de zoom au survol */
         }
+
+        /* Ajustement pour s'assurer que l'alignement reste parfait */
+        .nav-container { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; /* Aligné au centre verticalement */
+        }    
 
         /* --- Commande Prompt --- */
         .prompt { color: #CF7AFF; font-weight: bold; font-size: 0.8rem; }
@@ -104,13 +107,11 @@
     <nav>
     <div class="nav-container">
         <div class="nav-links">
-            <a href="index.html" class="nav-exit" title="Exit to Boot"> [ EXIT ] </a>
-            
             <a href="home.html">> HOME</a>
             <a href="about.html">> ABOUT</a>
             <a href="projects.html">> PROJECTS</a>
         </div>
-        <div class="corner-b">B</div>
+        <a href="index.html" class="nav-exit"> [ EXIT ] </a>
     </div>
 </nav>
 
