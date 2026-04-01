@@ -30,7 +30,7 @@
         .command { color: #fff; margin-bottom: 20px; font-size: 0.8rem; }
         
         /* --- Container --- */
-        .about-container { max-width: 800px; display: none; }
+        .about-container { max-width: 800px; }
         .title { color: #CF7AFF; font-size: 1.5rem; font-weight: bold; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
 
         /* --- Bio Style Log --- */
@@ -87,7 +87,7 @@
         <div id="loading-text"></div>
 
         <div id="content">
-            <div class="command"><span class="prompt">guest@b-system:~$</span> ls -la ./projects/deployed</div>
+            <div class="command"><span class="prompt">guest@b-system:~$</span> whoami --status && ./check_permissions.sh</div>
                      
             <div class="about-container">
                 <div class="status-line">> IDENTITY_FILE_LOADED: SUCCESS</div>
