@@ -1,1 +1,187 @@
-To be continued...
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>PROJECTS - B. System</title>
+    <style>
+        body { 
+            background: #000; color: #fff; font-family: 'Courier New', monospace;
+            margin: 0; padding: 40px; line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav { margin-bottom: 50px; border-bottom: 1px solid #1a1a1a; padding-bottom: 10px; }
+        .nav-container { display: flex; justify-content: space-between; align-items: baseline; }
+        nav a { color: #CF7AFF; text-decoration: none; margin-right: 25px; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: #fff; text-shadow: 0 0 8px #CF7AFF; }
+
+        .corner-b { font-size: 3rem; color: #ffffff; font-weight: 900; line-height: 1; }
+
+        /* --- Terminal Logic --- */
+        #content { display: none; max-width: 1100px; }
+        #loading-text { margin-bottom: 20px; color: #fff; font-size: 0.9rem; }
+        .prompt { color: #CF7AFF; font-weight: bold; }
+        .command { color: #fff; margin-bottom: 30px; font-size: 0.8rem; }
+
+        /* --- Grid de Projets --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            border: 1px solid #1a1a1a;
+            padding: 20px;
+            background: #050505;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            border-color: #CF7AFF;
+            box-shadow: 0 0 15px rgba(207, 122, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .project-status {
+            font-size: 0.7rem;
+            color: #CF7AFF;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .project-desc {
+            font-size: 0.85rem;
+            color: #ccc;
+            margin-bottom: 20px;
+            min-height: 80px;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            font-size: 0.7rem;
+            background: #1a1a1a;
+            color: #CF7AFF;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        .project-link {
+            display: block;
+            margin-top: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-top: 1px solid #1a1a1a;
+            padding-top: 15px;
+        }
+
+        .project-link:hover { color: #CF7AFF; }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="home.html">> HOME</a>
+                <a href="about.html">> ABOUT</a>
+                <a href="projects.html">> PROJECTS</a>
+            </div>
+            <div class="corner-b">B</div>
+        </div>
+    </nav>
+
+    <div id="terminal">
+        <div id="loading-text"></div>
+
+        <div id="content">
+            <div class="command"><span class="prompt">guest@b-system:~$</span> ls -la ./projects/deployed</div>
+
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <span class="project-status">[ COMPLETED ]</span>
+                    <div class="project-title">Infrastructure Fortinet & VPN</div>
+                    <p class="project-desc">Mise en place d'une architecture sécurisée avec tunnel VPN IPsec et filtrage applicatif pour une PME.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Fortigate</span>
+                        <span class="tech-tag">Network Security</span>
+                    </div>
+                    <a href="#" class="project-link">> VIEW_DOCUMENTATION</a>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-status">[ IN_PROGRESS ]</span>
+                    <div class="project-title">Audit Active Directory</div>
+                    <p class="project-desc">Analyse des vecteurs d'attaque sur un environnement Windows Server : BloodHound, Mimikatz et durcissement GPO.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Active Directory</span>
+                        <span class="tech-tag">Pentest</span>
+                    </div>
+                    <a href="#" class="project-link">> ANALYZE_REPORT</a>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-status">[ ARCHIVED ]</span>
+                    <div class="project-title">Supervision Zabbix/Centreon</div>
+                    <p class="project-desc">Déploiement d'une stack de monitoring pour la surveillance en temps réel de 50+ serveurs critiques.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Monitoring</span>
+                        <span class="tech-tag">Linux</span>
+                    </div>
+                    <a href="#" class="project-link">> READ_LOGS</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const lines = [
+            "> Accessing secure repository...",
+            "> Fetching project_manifest.json...",
+            "> Verifying checksums...",
+            "> 3 Projects found. Rendering..."
+        ];
+        
+        const loader = document.getElementById('loading-text');
+        const content = document.getElementById('content');
+        let lineIdx = 0;
+
+        function typeLog() {
+            if (lineIdx < lines.length) {
+                let p = document.createElement('div');
+                p.innerHTML = lines[lineIdx];
+                loader.appendChild(p);
+                lineIdx++;
+                setTimeout(typeLog, 400);
+            } else {
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    content.style.display = 'block';
+                }, 300);
+            }
+        }
+        typeLog();
+    </script>
+</body>
+</html>
