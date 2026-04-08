@@ -5,20 +5,42 @@
     <title>ABOUT</title>
     <style>
         body { 
-            background: #000; color: #fff; font-family: 'Courier New', monospace;
-            margin: 0; padding: 40px; line-height: 1.6;
+            background: #000;
+            color: #fff; 
+            font-family: 'Courier New', monospace;
+            margin: 0; 
+            padding: 40px; 
+            line-height: 1.6;
         }
 
-        /* --- Barre de Navigation --- */
-        nav { margin-bottom: 50px; border-bottom: 1px solid #1a1a1a; padding-bottom: 10px; }
-        nav a { color: #CF7AFF; text-decoration: none; margin-right: 25px; font-size: 0.9rem; transition: 0.3s; }
-        .nav-container { display: flex; justify-content: space-between; align-items: baseline; }
-        nav a:hover { color: #fff; text-shadow: 0 0 8px #CF7AFF; }
+        nav { 
+            margin-bottom: 50px;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 10px;
+        }
+        
+        nav a {
+            color: #CF7AFF; 
+            text-decoration: none; 
+            margin-right: 25px; 
+            font-size: 0.9rem; 
+            transition: 0.3s;
+        }
+        
+        .nav-container {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: baseline; 
+        }
+        
+        nav a:hover { 
+            color: #fff; 
+            text-shadow: 0 0 8px #CF7AFF;
+        }
 
-        /* --- Bouton Exit (Remplace Corner-B) --- */
         .nav-exit { 
-        font-size: 1.2rem; /* Plus petit que le B pour rester élégant */
-        color: ##E0E0E0;       /* Gris sombre par défaut */
+        font-size: 1.2rem; 
+        color: ##E0E0E0;
         font-weight: 900;
         text-decoration: none;
         line-height: 1;
@@ -27,43 +49,107 @@
         }
 
         .nav-exit:hover { 
-        color: #ff4444; 
-        text-shadow: 0 0 10px #ff4444; 
-        transform: scale(1.1); /* Petit effet de zoom au survol */
+        color: #E0E0E0; 
+        text-shadow: 0 0 10px #E0E0E0; 
+        transform: scale(1.1);
         }
 
-        /* Ajustement pour s'assurer que l'alignement reste parfait */
         .nav-container { 
         display: flex; 
         justify-content: space-between; 
-        align-items: center; /* Aligné au centre verticalement */
+        align-items: center;
         }
         
-        /* --- Commande Prompt --- */
-        #content { display: none; max-width: 1100px; }
-        #loading-text { margin-bottom: 20px; color: #fff; font-size: 0.9rem; }
-        .prompt { color: #CF7AFF; font-weight: bold; font-size: 0.8rem; }
-        .command { color: #fff; margin-bottom: 20px; font-size: 0.8rem; }
+        #content { 
+            display: none; 
+            max-width: 1100px; 
+        }
         
-        /* --- Container --- */
-        .about-container { max-width: 800px; }
-        .title { color: #CF7AFF; font-size: 1.5rem; font-weight: bold; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* --- Bio Style Log --- */
-        .bio-box { border-left: 2px solid #CF7AFF; padding-left: 20px; margin-bottom: 30px; }
-        .bio-text { color: #ccc; font-size: 0.85rem; margin-bottom: 20px; }
-        .bio-text strong { color: #CF7AFF; }
-
-        /* --- Structure des Sections --- */
-        .section { margin-bottom: 80px; display: none; }
-        .title { color: #CF7AFF; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        #loading-text { 
+            margin-bottom: 20px; 
+            color: #fff; 
+            font-size: 0.9rem; 
+        }
         
-        .job-card { border-left: 2px solid #CF7AFF; padding-left: 20px; margin-bottom: 30px; }
-        .job-company { font-weight: bold; color: #fff; font-size: 1.2rem; }
-        .job-date { color: #666; font-size: 0.85rem; margin-bottom: 5px; }
-        .job-desc { color: #ccc; margin-top: 5px; font-size: 0.85rem; }
+        .prompt {
+            color: #CF7AFF;
+            font-weight: bold;
+            font-size: 0.8rem; 
+        }
+        
+        .command {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 0.8rem; 
+        }
+        
+        .about-container {
+            max-width: 800px;
+        }
+        
+        .title { 
+            color: #CF7AFF; 
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 30px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+        }
 
-        /* --- Bouton CV (Le point focal) --- */
+        .bio-box { 
+            border-left: 2px solid #CF7AFF; 
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .bio-text {
+            color: #ccc;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+        
+        .bio-text strong {
+            color: #CF7AFF; 
+        }
+
+        .section { 
+            margin-bottom: 80px;
+            display: none; 
+        }
+        
+        .title {
+            color: #CF7AFF;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px; 
+        }
+        
+        .job-card {
+            border-left: 2px solid #CF7AFF; 
+            padding-left: 20px; 
+            margin-bottom: 30px
+            }
+        
+        .job-company {
+            font-weight: bold;
+            color: #fff;
+            font-size: 1.2rem; 
+        }
+        
+        .job-date {
+            color: #666; 
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+        
+        .job-desc { 
+            color: #ccc; 
+            margin-top: 5px; 
+            font-size: 0.85rem;
+        }
+
         .cv-button {
             display: inline-block;
             padding: 12px 25px;
@@ -83,7 +169,11 @@
             box-shadow: 0 0 15px rgba(207, 122, 255, 0.5);
         }
 
-        .status-line { font-size: 0.8rem; color: #666; margin-bottom: 10px; }
+        .status-line {
+            font-size: 0.8rem; 
+            color: #666; 
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
