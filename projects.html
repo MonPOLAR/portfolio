@@ -5,20 +5,42 @@
     <title>PROJECTS</title>
     <style>
         body { 
-            background: #000; color: #fff; font-family: 'Courier New', monospace;
-            margin: 0; padding: 40px; line-height: 1.6;
+            background: #000; 
+            color: #fff; 
+            font-family: 'Courier New', monospace;
+            margin: 0; 
+            padding: 40px; 
+            line-height: 1.6;
+        }
+        
+        nav {
+            margin-bottom: 50px; 
+            border-bottom: 1px solid #1a1a1a; 
+            padding-bottom: 10px; 
+        }
+        
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: baseline; 
+        }
+        
+        nav a { 
+            color: #CF7AFF;
+            text-decoration: none;
+            margin-right: 25px;
+            font-size: 0.9rem; 
+            transition: 0.3s; 
+        }
+        
+        nav a:hover { 
+            color: #fff; 
+            text-shadow: 0 0 8px #CF7AFF; 
         }
 
-        /* --- Navigation --- */
-        nav { margin-bottom: 50px; border-bottom: 1px solid #1a1a1a; padding-bottom: 10px; }
-        .nav-container { display: flex; justify-content: space-between; align-items: baseline; }
-        nav a { color: #CF7AFF; text-decoration: none; margin-right: 25px; font-size: 0.9rem; transition: 0.3s; }
-        nav a:hover { color: #fff; text-shadow: 0 0 8px #CF7AFF; }
-
-        /* --- Bouton Exit (Remplace Corner-B) --- */
         .nav-exit { 
-        font-size: 1.2rem; /* Plus petit que le B pour rester élégant */
-        color: ##E0E0E0;       /* Gris sombre par défaut */
+        font-size: 1.2rem;
+        color: ##E0E0E0;
         font-weight: 900;
         text-decoration: none;
         line-height: 1;
@@ -27,25 +49,39 @@
         }
 
         .nav-exit:hover { 
-        color: #ff4444; 
-        text-shadow: 0 0 10px #ff4444; 
-        transform: scale(1.1); /* Petit effet de zoom au survol */
+        color: #E0E0E0; 
+        text-shadow: 0 0 10px #E0E0E0; 
+        transform: scale(1.1);
         }
 
-        /* Ajustement pour s'assurer que l'alignement reste parfait */
         .nav-container { 
         display: flex; 
         justify-content: space-between; 
-        align-items: center; /* Aligné au centre verticalement */
+        align-items: center;
+        }
+        
+        #content { 
+            display: none;
+            max-width: 1100px; 
+        }
+        
+        #loading-text {
+            margin-bottom: 20px; 
+            color: #fff; 
+            font-size: 0.9rem;
+        }
+        
+        .prompt { 
+            color: #CF7AFF; 
+            font-weight: bold; 
+        }
+        
+        .command {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 0.8rem; 
         }
 
-        /* --- Terminal Logic --- */
-        #content { display: none; max-width: 1100px; }
-        #loading-text { margin-bottom: 20px; color: #fff; font-size: 0.9rem; }
-        .prompt { color: #CF7AFF; font-weight: bold; }
-        .command { color: #fff; margin-bottom: 30px; font-size: 0.8rem; }
-
-        /* --- Grid de Projets --- */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -115,7 +151,9 @@
             padding-top: 15px;
         }
 
-        .project-link:hover { color: #CF7AFF; }
+        .project-link:hover { 
+            color: #CF7AFF;
+        }
         
         .ctf-btn {
             background: transparent;
@@ -124,8 +162,8 @@
             padding: 10px 20px;
             cursor: pointer;
             font-family: 'Courier New', monospace;
-            transition: all 0.1s ease; /* Très rapide pour l'effet de téléportation */
-            position: relative; /* Nécessaire pour le déplacement */
+            transition: all 0.1s ease;
+            position: relative;
             z-index: 100;
         }
 
@@ -133,12 +171,9 @@
             background: rgba(207, 122, 255, 0.1);
         }
 
-
-
     </style>
 </head>
 <body>
-
     <nav>
     <div class="nav-container">
         <div class="nav-links">
@@ -207,7 +242,7 @@
       </div>
 
         <div class="project-card">
-          <span class="project-status">[ LIVE ]</span>
+          <span class="project-status">[ COMPLETED ]</span>
           <div class="project-title">Test d'intrusion Linux</div>
           <p class="project-desc">Recherche & exploitation de vulnérabilité d'une machine mise à disposition. C'est un entrainement au Boot-to-Root.</p>
           <div class="tech-tags">
@@ -224,12 +259,9 @@
            <span style="color: #CF7AFF;">> FLAG FOUND:</span> B_SYSTEM{C4TCH_M3_IF_YOU_C4N}
            </div>
         </div>
-                
-  </div>
             </div>
         </div>
     </div>
-
     <script>
         const lines = [
             "> Accessing secure repository...",
@@ -257,12 +289,10 @@
             }
         }
         typeLog();
-    </script>
-    <script>
+        
     const btn = document.getElementById('ctf-button');
     const flag = document.getElementById('flag-display');
     
-    // On définit aléatoirement le nombre de clics nécessaires entre 5 et 10
     let clicksNeeded = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
     let currentClicks = 0;
 
@@ -270,16 +300,16 @@
         currentClicks++;
 
         if (currentClicks < clicksNeeded) {
-            // Calcul de positions aléatoires (on reste dans les limites de la vue)
+
             const x = Math.random() * (window.innerWidth - btn.offsetWidth - 100);
             const y = Math.random() * (window.innerHeight - btn.offsetHeight - 100);
 
-            // On passe le bouton en position fixed pour qu'il bouge partout
+
             btn.style.position = 'fixed';
             btn.style.left = x + 'px';
             btn.style.top = y + 'px';
             
-            // On change le texte pour narguer l'utilisateur
+
             btn.innerText = "ACCESS_DENIED";
             setTimeout(() => { btn.innerText = "Try Again"; }, 500);
         } else {
