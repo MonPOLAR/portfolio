@@ -13,6 +13,26 @@
             line-height: 1.6;
         }
         
+        .lang-fr {
+            display: none; 
+        }
+
+        body.fr-mode .lang-fr { 
+            display: inline-block; 
+        }
+        
+        body.fr-mode .lang-en {
+            display: none; 
+        }
+
+        #lang-switch {
+            font-size: 0.8rem;
+            color: #E0E0E0;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-left: 15px;
+        }
+        
         nav { 
             margin-bottom: 50px;
             border-bottom: 1px solid #1a1a1a; 
@@ -169,12 +189,13 @@
 </head>
 <body>
 
-    <nav>
+<nav>
     <div class="nav-container">
         <div class="nav-links">
-            <a href="home.html">> HOME</a>
-            <a href="about.html">> ABOUT</a>
-            <a href="projects.html">> PROJECTS</a>
+            <a href="home.html">> <span class="lang-en">HOME</span><span class="lang-fr">ACCUEIL</span></a>
+            <a href="about.html">> <span class="lang-en">ABOUT</span><span class="lang-fr">À PROPOS</span></a>
+            <a href="projects.html">> <span class="lang-en">PROJECTS</span><span class="lang-fr">PROJETS</span></a>
+            <a id="lang-switch" style="margin-left: 20px; color: #fff; cursor: pointer;">[ FR ]</a>
         </div>
         <a href="index.html" class="nav-exit"> [ EXIT ] </a>
     </div>
@@ -187,56 +208,136 @@
                  <div class="command"><span class="prompt">guest@b-system:~$</span> cat profile.txt</div>
                 
             <div class="section-block">
-                <div class="title">Parcours_Professionnel</div>
-
-                <div class="job-card">
-                    <div class="job-company">M:armites - ALTERNANT SYSADMIN | CYBER</div>
-                    <div class="job-date">Novembre 2025 - Septembre 2026</div>
-                    <div class="job-desc">Participation à l’administration et à l’optimisation des systèmes et réseaux, incluant l’analyse des besoins utilisateurs, la gestion des incidents, la cybersécurité, ainsi que la R&D de nouvelles solutions.</div>
+                <div class="title">
+                    <span class="lang-en">Career_Path</span>
+                    <span class="lang-fr">Parcours_Professionnel</span>
                 </div>
 
                 <div class="job-card">
-                    <div class="job-company">Union Bancaire Privé (UBP) - CONSULTANT INFORMATIQUE | SERVICE DESK NIVEAU 1</div>
-                    <div class="job-date">Décembre 2024 - Septembre 2025</div>
-                    <div class="job-desc">Gestion du support informatique de premier niveau, incluant la prise en charge des utilisateurs, la gestion et le suivi des incidents, l’administration des comptes, le dépannage (à distance ou sur site) ainsi que la maintenance et la documentation des systèmes.</div>
+                    <div class="job-company">
+                        <span class="lang-en">M:armites - SYSADMIN | CYBER APPRENTICE</span>
+                        <span class="lang-fr">M:armites - ALTERNANT SYSADMIN | CYBER</span>
+                    </div>
+                    <div class="job-date">
+                        <span class="lang-en">November 2025 - September 2026</span>
+                        <span class="lang-fr">Novembre 2025 - Septembre 2026</span>
+                    </div>
+                    <div class="job-desc">
+                        <span class="lang-en">Contributing to the administration and optimization of systems and networks, including user needs analysis, incident management, cybersecurity, and R&D for new solutions.</span>
+                        <span class="lang-fr">Participation à l’administration et à l’optimisation des systèmes et réseaux, incluant l’analyse des besoins utilisateurs, la gestion des incidents, la cybersécurité, ainsi que la R&D de nouvelles solutions.</span>
+                    </div>
                 </div>
 
                 <div class="job-card">
-                    <div class="job-company">XEFI - STAGIAIRE HELPDESK</div>
-                    <div class="job-date">Mars 2024 - Avril 2024</div>
-                    <div class="job-desc">Réalisation de prestations standards telles que la configuration, la livraison, l’installation, le dépannage et la mise en service de tout type de matériel informatique.</div>
+                    <div class="job-company">
+                        <span class="lang-en">Union Bancaire Privé (UBP) - IT CONSULTANT | HELPDESK LEVEL 1</span>
+                        <span class="lang-fr">Union Bancaire Privé (UBP) - CONSULTANT INFORMATIQUE | SERVICE DESK NIVEAU 1</span>
+                    </div>
+                    <div class="job-date">
+                        <span class="lang-en">December 2024 - September 2025</span>
+                        <span class="lang-fr">Décembre 2024 - Septembre 2025</span>
+                    </div>
+                    <div class="job-desc">
+                        <span class="lang-en">Managing Tier 1 IT support, including user assistance, incident management and tracking, account administration, remote troubleshooting, as well as system maintenance and documentation.</span>
+                        <span class="lang-fr">Gestion du support informatique de premier niveau, incluant la prise en charge des utilisateurs, la gestion et le suivi des incidents, l’administration des comptes, le dépannage à distance ainsi que la maintenance et la documentation des systèmes.</span>
+                    </div>
                 </div>
 
                 <div class="job-card">
-                    <div class="job-company">2linfo - STAGIAIRE ADMINISTRATEUR SYSTÈMES ET RÉSEAUX</div>
-                    <div class="job-date">Mars 2023 - Avril 2023</div>
-                    <div class="job-desc">Participation au développement et au déploiement de solutions informatiques et télécoms, incluant la supervision des réseaux, le support client, ainsi que la contribution aux audits et projets de téléphonie sur IP.</div>
+                    <div class="job-company">
+                        <span class="lang-en">XEFI - INTERN HELPDESK</span>
+                        <span class="lang-fr">XEFI - STAGIAIRE HELPDESK</span>
+                    </div>
+                    <div class="job-date">
+                        <span class="lang-en">March 2024 - April 2024</span>
+                        <span class="lang-fr">Mars 2024 - Avril 2024</span>
+                    </div>
+                    <div class="job-desc">
+                        <span class="lang-en">Performing standard services such as the configuration, delivery, installation, troubleshooting, and commissioning of all types of IT equipment.</span>
+                        <span class="lang-fr">Réalisation de prestations standards telles que la configuration, la livraison, l’installation, le dépannage et la mise en service de tout type de matériel informatique.</span>
+                    </div>
                 </div>
-            </div>
-
+                                
+                <div class="job-card">
+                    <div class="job-company">
+                        <span class="lang-en">2linfo - INTERN SYSTEMS AND NETWORKS ADMINISTRATOR</span>
+                        <span class="lang-fr">2linfo - STAGIAIRE ADMINISTRATEUR SYSTÈMES ET RÉSEAUX</span>
+                    </div>
+                    <div class="job-date">
+                        <span class="lang-en">March 2023 - April 2023</span>
+                        <span class="lang-fr">Mars 2023 - Avril 2023</span>
+                    </div>
+                    <div class="job-desc">
+                        <span class="lang-en">Participating in the development and deployment of IT and telecommunications solutions, including network monitoring, customer support, and contributing to audits and Voice over IP (VoIP) projects.</span>
+                        <span class="lang-fr">Participation au développement et au déploiement de solutions informatiques et télécoms, incluant la supervision des réseaux, le support client, ainsi que la contribution aux audits et projets de téléphonie sur IP.</span>
+                    </div>
+                </div>
+                
             <div class="section-block">
                 <div class="skills-section">
-                    <div class="title">Compétences_Clés</div>
+                    <div class="title">
+                        <span class="lang-en">Soft_Skills</span>
+                        <span class="lang-fr">Compétences_Clés</span>
+                    </div>
                     <div class="job-desc">
-                        <p>> <strong>SÉCURITÉ & PROTECTION</strong>: Fortinet, Mailinblack, Datto, Veeam, Comodo BackUp, Active Directory.</p>
-                        <p>> <strong>ADMINISTRATION & SUPERVISION</strong>: Centreon, Zabbix, SCCM, Windows, Linux, Pack Office 365, Exchange.</p>
-                        <p>> <strong>METHODOLOGIE & SUPPORT</strong>: Jira, BMC Ready, Support N1/N2, Documentation.</p>
+                        <p>>
+                            <span class="lang-en"><strong>SECURITY & DATA PROTECTION</strong>: Fortinet, Mailinblack, Datto, Veeam, Comodo BackUp, Active Directory.</span>
+                            <span class="lang-fr"><strong>SÉCURITÉ & PROTECTION</strong>: Fortinet, Mailinblack, Datto, Veeam, Comodo BackUp, Active Directory.</span>
+                        </p>
+                        <p>>
+                            <span class="lang-en"><strong>ADMINISTRATION & MONITORING</strong>: Centreon, Zabbix, SCCM, Windows, Linux, Office 365, Exchange.</span>
+                            <span class="lang-fr"><strong>ADMINISTRATION & SUPERVISION</strong>: Centreon, Zabbix, SCCM, Windows, Linux, Pack Office 365, Exchange.</span>
+                        </p>
+                        <p>>
+                            <span class="lang-en"><strong>PROCESS & TECHNICAL SUPPORT</strong>: Jira, BMC Ready, T1/T2 Support, Technical Documentation.</span>
+                            <span class="lang-fr"><strong>METHODOLOGIE & SUPPORT</strong>: Jira, BMC Ready, Support N1/N2, Documentation.</span>
+                        </p>
                     </div>
                 </div>
             </div>
 
             <div class="section-block">
-                <div class="title">Passions</div>
+                <div class="title">
+                    <span class="lang-en">Passions</span>
+                    <span class="lang-fr">Passions</span>
+                </div>
                 <div class="passions-container">
-                    <div class="passion-tag" data-info="Le sport occupe également une place importante dans ma vie. Que ce soit le volleyball, la course à pied ou la musculation, j'aime me dépenser physiquement et repousser mes limites. Le sport me permet de rester en forme et de me vider l'esprit. Chaque jour, je me lance de nouveaux défis que je souhaite relever afin de constamment m’améliorer dans ce que je fais.">#Volleyball</div>
-                    <div class="passion-tag" data-info="En dehors de ma passion pour la musique et l’informatique, j'ai également un intérêt pour les jeux vidéo. Depuis mon enfance, je suis fasciné par l'univers des jeux, que ce soit pour leur histoire captivante, leurs graphismes époustouflants ou simplement pour le plaisir de jouer avec des amis. Les jeux vidéo sont pour moi une source de divertissement infinie et une façon fantastique de stimuler ma créativité.">#Jeux-vidéo</div>
-                    <div class="passion-tag" data-info="Passionné par la musique et le beatmaking, je passe une bonne partie de mon temps libre à composer des sons et à explorer de nouveaux genres musicaux. Rien ne me motive plus que de créer une mélodie entraînante ou de trouver le rythme parfait pour une chanson. J’ai au fond de moi toujours voulu vivre de ma musique et pouvoir remplacer mes artistes préférés qui m'inspire profondément.">#Musique</div>
+                    <div class="passion-tag" data-info="
+                       <span class='lang-en'>Sports play a major role in my life. Whether it's volleyball, running, or weightlifting, I love pushing my limits. It helps me stay fit and clear my mind.</span>
+                       <span class='lang-fr'>Le sport occupe également une place importante dans ma vie. Que ce soit le volleyball, la course à pied ou la musculation, j'aime me dépenser physiquement et repousser mes limites. Le sport me permet de rester en forme et de me vider l'esprit. Chaque jour, je me lance de nouveaux défis que je souhaite relever afin de constamment m’améliorer dans ce que je fais.</span>
+                       <span class="lang-en">#Volleyball</span>
+                       <span class="lang-fr">#Volleyball</span>
+                    </div>
+                    <div class="passion-tag" data-info="
+                       <span class='lang-en'>Beyond music and IT, I've always been fascinated by video games. From captivating stories to stunning graphics, they are a source of endless entertainment and creativity for me.</span>
+                       <span class='lang-fr'>En dehors de ma passion pour la musique et l’informatique, j'ai également un intérêt pour les jeux vidéo. Depuis mon enfance, je suis fasciné par l'univers des jeux, que ce soit pour leur histoire captivante, leurs graphismes époustouflants ou simplement pour le plaisir de jouer avec des amis. Les jeux vidéo sont pour moi une source de divertissement infinie et une façon fantastique de stimuler ma créativité.</span>
+                       <span class="lang-en">#Video-games</span>
+                       <span class="lang-fr">#Jeux-vidéo</span>
+                    </div>
+                    <div class="passion-tag" data-info="
+                       <span class='lang-en'>Passionate about music and beatmaking, I spend my free time composing tracks. Nothing motivates me more than creating a catchy melody or finding the perfect rhythm.</span>
+                       <span class='lang-fr'>Passionné par la musique et le beatmaking, je passe une bonne partie de mon temps libre à composer des sons et à explorer de nouveaux genres musicaux. Rien ne me motive plus que de créer une mélodie entraînante ou de trouver le rythme parfait pour une chanson. J’ai au fond de moi toujours voulu vivre de ma musique et pouvoir remplacer mes artistes préférés qui m'inspire profondément.</span>
+                       <span class="lang-en">#Music</span>
+                       <span class="lang-fr">#Musique</span>
+                    </div>
                 </div>
                 <div id="passion-description"></div>
         </div>
     </div>
         
     <script>
+        const langBtn = document.getElementById('lang-switch');
+        const body = document.body;
+
+        langBtn.addEventListener('click', () => {
+            body.classList.toggle('fr-mode');
+            
+            if (body.classList.contains('fr-mode')) {
+                langBtn.innerText = "[ EN ]";
+            } else {
+                langBtn.innerText = "[ FR ]";
+            }
+        });
         const lines = [
             "> Initializing connection...",
             "> Decrypting secure layers...",
@@ -273,7 +374,7 @@
                 tag.classList.add('active');
 
                 descriptionBox.style.display = 'block';
-                descriptionBox.innerText = tag.getAttribute('data-info');
+                descriptionBox.innerHtml = tag.getAttribute('data-info');
             });
         });
 
