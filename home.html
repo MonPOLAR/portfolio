@@ -5,20 +5,42 @@
     <title>HOME</title>
     <style>
         body { 
-            background: #000; color: #fff; font-family: 'Courier New', monospace;
-            margin: 0; padding: 40px; line-height: 1.6;
+            background: #000; 
+            color: #fff; 
+            font-family: 'Courier New', monospace;
+            margin: 0; 
+            padding: 40px; 
+            line-height: 1.6;
         }
         
-        /* --- Barre de Navigation --- */
-        nav { margin-bottom: 50px; border-bottom: 1px solid #1a1a1a; padding-bottom: 10px; }
-        nav a { color: #CF7AFF; text-decoration: none; margin-right: 25px; font-size: 0.9rem; transition: 0.3s; }
-        .nav-container { display: flex; justify-content: space-between; align-items: baseline; }
-        nav a:hover { color: #fff; text-shadow: 0 0 8px #CF7AFF; }
-
-        /* --- Bouton Exit (Remplace Corner-B) --- */
+        nav { 
+            margin-bottom: 50px;
+            border-bottom: 1px solid #1a1a1a; 
+            padding-bottom: 10px; 
+        }
+        
+        nav a { 
+            color: #CF7AFF; 
+            text-decoration: none; 
+            margin-right: 25px; 
+            font-size: 0.9rem; 
+            transition: 0.3s;
+        }
+        
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: baseline; 
+        }
+        
+        nav a:hover { 
+            color: #fff; 
+            text-shadow: 0 0 8px #CF7AFF; 
+        }
+        
         .nav-exit { 
-        font-size: 1.2rem; /* Plus petit que le B pour rester élégant */
-        color: ##E0E0E0;       /* Gris sombre par défaut */
+        font-size: 1.2rem;
+        color: ##E0E0E0;
         font-weight: 900;
         text-decoration: none;
         line-height: 1;
@@ -27,42 +49,82 @@
         }
 
         .nav-exit:hover { 
-        color: #ff4444; 
-        text-shadow: 0 0 10px #ff4444; 
-        transform: scale(1.1); /* Petit effet de zoom au survol */
+        color: #E0E0E0; 
+        text-shadow: 0 0 10px #E0E0E0; 
+        transform: scale(1.1);
         }
 
-        /* Ajustement pour s'assurer que l'alignement reste parfait */
         .nav-container { 
         display: flex; 
         justify-content: space-between; 
-        align-items: center; /* Aligné au centre verticalement */
+        align-items: center; 
         }    
 
-        /* --- Commande Prompt --- */
-        .prompt { color: #CF7AFF; font-weight: bold; font-size: 0.8rem; }
-        .command { color: #fff; margin-bottom: 20px; font-size: 0.8rem; }
-
-        /* --- Structure des Sections --- */
-        .section { margin-bottom: 80px; display: none; }
-        .title { color: #CF7AFF; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .prompt { 
+            color: #CF7AFF; 
+            font-weight: bold; 
+            font-size: 0.8rem; 
+        }
         
-        .job-card { border-left: 2px solid #CF7AFF; padding-left: 20px; margin-bottom: 30px; }
-        .job-company { font-weight: bold; color: #fff; font-size: 1.1rem; }
-        .job-date { color: #666; font-size: 0.8rem; margin-bottom: 5px; }
-        .job-desc { color: #ccc; margin-top: 5px; font-size: 0.95rem; }
+        .command { 
+            color: #fff;
+            margin-bottom: 20px; 
+            font-size: 0.8rem; 
+        }
 
-        /* --- Conteneur des Sections --- */
+        .section { 
+            margin-bottom: 80px; 
+            display: none; 
+        }
+        .title {
+            color: #CF7AFF; 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
+        
+        .job-card { 
+            border-left: 2px solid #CF7AFF; 
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .job-company { 
+            font-weight: bold; 
+            color: #fff; 
+            font-size: 1.1rem; 
+        }
+        
+        .job-date {
+            color: #666; 
+            font-size: 0.8rem; 
+            margin-bottom: 5px; 
+        }
+        
+        .job-desc {
+            color: #ccc;
+            margin-top: 5px; 
+            font-size: 0.95rem; 
+        }
+
         .section-block { 
             margin-bottom: 80px;
         }
             
-        /* --- Espacement Compétences --- */
-        .skills-section { margin-top: 20px; margin-bottom: 15px; }
+        .skills-section {
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
 
-
-        /* --- Section Passions --- */
-        .passions-container { margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap; }
+        .passions-container {
+            margin-top: 20px; 
+            display: flex; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+        }
+        
         .passion-tag { 
             border: 1px solid #CF7AFF; 
             color: #CF7AFF; 
@@ -71,7 +133,6 @@
             text-transform: lowercase;
         }
 
-        /* --- Boîte de description des passions --- */
         #passion-description {
             margin-top: 20px;
             padding: 15px;
@@ -99,7 +160,11 @@
             box-shadow: 0 0 10px #CF7AFF;
         }
 
-        #loading-text { margin-bottom: 20px; color: #fff; font-size: 0.9rem; }
+        #loading-text { 
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 0.9rem; 
+        }
     </style>
 </head>
 <body>
@@ -170,7 +235,7 @@
                 <div id="passion-description"></div>
         </div>
     </div>
-
+        
     <script>
         const lines = [
             "> Initializing connection...",
@@ -198,19 +263,15 @@
             }
         }
 
-        // Gestion du clic sur les passions
         const tags = document.querySelectorAll('.passion-tag');
         const descriptionBox = document.getElementById('passion-description');
 
         tags.forEach(tag => {
             tag.addEventListener('click', () => {
-                // Retirer la classe active des autres tags
                 tags.forEach(t => t.classList.remove('active'));
-        
-                // Ajouter la classe active au tag cliqué
+
                 tag.classList.add('active');
-        
-                // Afficher la description avec un petit effet
+
                 descriptionBox.style.display = 'block';
                 descriptionBox.innerText = tag.getAttribute('data-info');
             });
