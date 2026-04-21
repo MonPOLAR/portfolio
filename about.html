@@ -330,7 +330,7 @@
                 </div>
                                                                 
             <div class="status-line">>ACCESS_RESTRICTED_DOCUMENT: CV_2026PDF</div>
-            <a href="storage/CV - 2026.pdf" class="cv-button" target="_blank">
+            <a href="storage/CV - 2026 - EN.pdf" id="cv-link" class="cv-button" target="_blank">
                 <span class="lang-en">Download CV (.pdf)</span>
                 <span class="lang-fr">Télécharger mon CV (.pdf)</span>
             </a>
@@ -339,14 +339,18 @@
     <script>
         const langBtn = document.getElementById('lang-switch');
         const body = document.body;
+        const cvLink = document.getElementById('cv-link');
 
         langBtn.addEventListener('click', () => {
             body.classList.toggle('fr-mode');
     
             if (body.classList.contains('fr-mode')) {
                 langBtn.innerText = "[ EN ]";
-            } else {
+                if(cvLink) cvLink.href = "storage/CV - 2026.pdf";
+            } 
+            else {
                 langBtn.innerText = "[ FR ]";
+                if(cvLink) cvLink.href = "storage/CV - 2026 - EN.pdf";
             }
         });
         const lines = [
