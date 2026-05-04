@@ -142,7 +142,7 @@
         </div>   
     </div>
 
-    <div class="corner bottom-left">
+    <div class="corner bottom-left" onclick="accessSecret()" style="cursor: help;">
         Time before the website's implosion : <span id="timer">00:12:00:00</span>
     </div>
 
@@ -197,6 +197,29 @@
                 // En cas d'AdBlocker ou de problème réseau
                 dateElement.innerText = `${today} | ERROR`;
             }); 
+
+        function accessSecret() {
+        // 1. Demande l'identifiant
+        let user = prompt("🔴 CRITICAL SYSTEM ACCESS\Identifiant requis :");
+    
+        // Si l'utilisateur annule
+        if (user === null) return;
+
+        // 2. Demande le mot de passe
+        let password = prompt("Mot de passe pour '" + user + "' :");
+    
+        if (password === null) return;
+    
+        // 3. Vérification (Tu peux changer les accès ici)
+        if (user === "ADMIN_B" && password === "S3cur3_P4ss!") {
+            alert("✅ Accès autorisé. Redirection vers les archives sécurisées...");
+            // Remplace par le nom de ta page secrète
+            window.location.href = "secret_archive.html"; 
+        } else {
+            // Reproduit l'effet "Accès refusé" de ta capture d'écran
+            alert("🚫 Accès refusé.");
+        }
+    }
      </script>
 </body>
 </html>
