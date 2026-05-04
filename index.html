@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>404 Not Found</title>
     <link rel="icon" type="image/png" href="storage/favicon.jpg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <style>
         body { 
             background: #000; 
@@ -198,28 +199,27 @@
                 dateElement.innerText = `${today} | ERROR`;
             }); 
 
-        function accessSecret() {
-        // 1. Demande l'identifiant
-        let user = prompt("🔴 CRITICAL SYSTEM ACCESS\Identifiant requis :");
-    
-        // Si l'utilisateur annule
-        if (user === null) return;
+                function accessSecret() {
+            let user = prompt("🔴 SYSTEM LOGIN\nUsername :");
+            if (user === null) return;
 
-        // 2. Demande le mot de passe
-        let password = prompt("Mot de passe pour '" + user + "' :");
-    
-        if (password === null) return;
-    
-        // 3. Vérification (Tu peux changer les accès ici)
-        if (user === "ADMIN_B" && password === "S3cur3_P4ss!") {
-            alert("✅ Accès autorisé. Redirection vers les archives sécurisées...");
-            // Remplace par le nom de ta page secrète
-            window.location.href = "secret_archive.html"; 
-        } else {
-            // Reproduit l'effet "Accès refusé" de ta capture d'écran
-            alert("🚫 Accès refusé.");
+            let password = prompt("Password :");
+            if (password === null) return;
+
+            // Génération des hashs à partir des entrées utilisateur
+            let hashUser = CryptoJS.SHA256(user).toString();
+            let hashPass = CryptoJS.SHA256(password).toString();
+
+            // Comparaison avec les hashs de 'user_b' et 'bravo'
+            if (hashUser === "3f32c3886566d80482811456006093952336331901a1f0a2d2005080f5556f8f" && 
+                hashPass === "d50269387431e5f8f5337e604f7d6a5992923976378e7f1e739958316f733198") {
+        
+                alert("✅ ACCESS GRANTED. Welcome user_b.");
+                window.location.href = "secret_archive.html"; 
+            } else {
+                alert("🚫 ACCESS DENIED. Intrusion detected.");
+            }
         }
-    }
      </script>
 </body>
 </html>
