@@ -143,8 +143,10 @@
         </div>   
     </div>
 
-    <div class="corner bottom-left" onclick="accessSecret()" style="cursor: help;">
+    <div class="corner bottom-left" style="cursor: help;">
+        <a href="bethesavior.html">
         Time before the website's implosion : <span id="timer">00:12:00:00</span>
+        </a>
     </div>
 
     <div class="corner bottom-right" id="date"></div>
@@ -199,27 +201,6 @@
                 dateElement.innerText = `${today} | ERROR`;
             }); 
 
-                function accessSecret() {
-            let user = prompt("🔴 SYSTEM LOGIN\nUsername :");
-            if (user === null) return;
-
-            let password = prompt("Password :");
-            if (password === null) return;
-
-            // Génération des hashs à partir des entrées utilisateur
-            let hashUser = CryptoJS.SHA256(user).toString();
-            let hashPass = CryptoJS.SHA256(password).toString();
-
-            // Comparaison avec les hashs de 'user_b' et 'bravo'
-            if (hashUser === "3f32c3886566d80482811456006093952336331901a1f0a2d2005080f5556f8f" && 
-                hashPass === "d50269387431e5f8f5337e604f7d6a5992923976378e7f1e739958316f733198") {
-        
-                alert("✅ ACCESS GRANTED. Welcome user_b.");
-                window.location.href = "bethesavior.html"; 
-            } else {
-                alert("🚫 ACCESS DENIED. Intrusion detected.");
-            }
-        }
      </script>
 </body>
 </html>
