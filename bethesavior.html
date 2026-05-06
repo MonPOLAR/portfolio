@@ -1,5 +1,106 @@
-<div class="terminal-secret">
-    <h1>[ DOSSIER CONFIDENTIEL ]</h1>
-    <p>Félicitations, vous avez trouvé le flag : <strong>B_SYSTEM{Cyb3r_Expl0r3r_2026}</strong></p>
-    <a href="home.html">Retour au système</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SYSTEM LOGIN</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        body {
+            background: #000;
+            color: #CF7AFF;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            border: 1px solid #CF7AFF;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(207, 122, 255, 0.2);
+            width: 350px;
+        }
+        h2 { text-align: center; font-size: 1.2rem; margin-bottom: 25px; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; font-size: 0.8rem; margin-bottom: 5px; }
+        input {
+            width: 100%;
+            background: #111;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            outline: none;
+        }
+        input:focus { border-color: #CF7AFF; }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: 1px solid #CF7AFF;
+            color: #CF7AFF;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #CF7AFF;
+            color: #000;
+        }
+        #error-msg {
+            color: #ff4444;
+            font-size: 0.75rem;
+            margin-top: 15px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>[ RESTRICTED ACCESS ]</h2>
+    <div class="input-group">
+        <label>USERNAME</label>
+        <input type="text" id="username" autocomplete="off">
+    </div>
+    <div class="input-group">
+        <label>PASSWORD</label>
+        <input type="password" id="password">
+    </div>
+    <button onclick="checkLogin()">IDENTIFY</button>
+    <div id="error-msg">🚫 ACCESS_DENIED: INVALID_CREDENTIALS</div>
 </div>
+
+<script>
+    function checkLogin() {
+        const u = document.getElementById('username').value;
+        const p = document.getElementById('password').value;
+        const err = document.getElementById('error-msg');
+
+        // Hashage des entrées
+        const hashU = CryptoJS.SHA256(u).toString();
+        const hashP = CryptoJS.SHA256(p).toString();
+
+        // Comparaison avec user_b et bravo
+        if (hashU === "3f32c3886566d80482811456006093952336331901a1f0a2d2005080f5556f8f" && 
+            hashP === "d50269387431e5f8f5337e604f7d6a5992923976378e7f1e739958316f733198") {
+            
+            alert("ACCESS GRANTED.");
+            window.location.href = "secret_archive.html"; // Ta page finale
+        } else {
+            err.style.display = 'block';
+            // Petit effet de vibration sur l'erreur
+            setTimeout(() => { err.style.display = 'none'; }, 2000);
+        }
+    }
+
+    // Permet de valider avec la touche Entrée
+    document.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') { checkLogin(); }
+    });
+</script>
+
+</body>
+</html>
