@@ -212,7 +212,7 @@ function initLoginPage() {
     const hashP = CryptoJS.SHA256(p).toString();
 
     if (
-      hashU === 'ef5d6d95ce14fc75b6d3d7f95b355d7fd2a5b3720d9e75d9b68d6d5f9b0d6f5e' &&
+      hashU === '449d911a5a57c56b9eb31294052d9d85385f033902f80f3b1d2156153445fdad' &&
       hashP === 'f144a6907dc4284d1f9fe6a7d9b9ff53c02c1d07ba68f24d413d7ff7f757a782'
     ) {
       alert('ACCESS GRANTED.');
