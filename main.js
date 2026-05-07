@@ -202,15 +202,15 @@ function initCtfButton() {
 function initLoginPage() {
   const loginBtn = document.querySelector('.login-btn');
   if (!loginBtn) return;
-
+ 
   function checkLogin() {
     const u   = document.getElementById('username').value;
     const p   = document.getElementById('password').value;
     const err = document.getElementById('error-msg');
-
+ 
     const hashU = CryptoJS.SHA256(u).toString();
     const hashP = CryptoJS.SHA256(p).toString();
-
+ 
     if (
       hashU === 'ef5d6d95ce14fc75b6d3d7f95b355d7fd2a5b3720d9e75d9b68d6d5f9b0d6f5e' &&
       hashP === 'f144a6907dc4284d1f9fe6a7d9b9ff53c02c1d07ba68f24d413d7ff7f757a782'
@@ -222,9 +222,9 @@ function initLoginPage() {
       setTimeout(() => { err.style.display = 'none'; }, 2000);
     }
   }
-
+ 
   loginBtn.addEventListener('click', checkLogin);
-
+ 
   document.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') checkLogin();
   });
