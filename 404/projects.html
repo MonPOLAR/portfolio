@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>PROJECTS</title>
+  <link rel="icon" type="image/png" href="../storage/favicon.jpg">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="home.html">&gt; HOME</a>
+        <a href="about.html">&gt; ABOUT</a>
+        <a href="projects.html">&gt; PROJECTS</a>
+      </div>
+      <a href="../index.html" class="nav-exit"> [ EXIT ] </a>
+    </div>
+  </nav>
+
+  <div id="terminal">
+    <div id="loading-text"></div>
+
+    <div id="content">
+      <div class="command"><span class="prompt">guest@b-system:~$</span> ls -la ./projects/deployed</div>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <span class="project-status">[ COMPLETED ]</span>
+          <div class="project-title">Architecture Active Directory : ValorElec (entreprise non existante)</div>
+          <p class="project-desc">Déploiement d'une infrastructure Windows Server. Automatisation de la création d'OU et d'utilisateurs via <strong>PowerShell</strong>. Mise en place de GPO restrictives (Hardening utilisateur).</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Active Directory</span>
+            <span class="tech-tag">PowerShell</span>
+            <span class="tech-tag">GPO</span>
+          </div>
+          <a href="../storage/ValorElec.pdf" target="_blank" class="project-link">&gt; OPEN_CASE_FILE</a>
+        </div>
+
+        <div class="project-card">
+          <span class="project-status">[ COMPLETED ]</span>
+          <div class="project-title">Hardening &amp; Bastionnage Linux</div>
+          <p class="project-desc">Sécurisation d'un noyau Linux : configuration SSH (clés uniquement), pare-feu IPTables/UFW, et désactivation des services non essentiels (CIS Benchmark).</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">Hardening</span>
+            <span class="tech-tag">SSH Security</span>
+          </div>
+          <a href="../storage/hardening.pdf" class="project-link">&gt; VIEW_SECURITY_POLICIES</a>
+        </div>
+
+        <div class="project-card">
+          <span class="project-status">[ COMPLETED ]</span>
+          <div class="project-title">Exploitation de Vulnérabilités</div>
+          <p class="project-desc">Simulations d'intrusions sur machines vulnérables. Utilisation de <strong>Metasploit</strong>, Nmap et techniques de Pivotement.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Metasploit</span>
+            <span class="tech-tag">Pentest</span>
+            <span class="tech-tag">Nmap</span>
+          </div>
+          <a href="../storage/metasploit.pdf" class="project-link">&gt; ACCESS_EXPLOIT_LOGS</a>
+        </div>
+
+        <div class="project-card">
+          <span class="project-status">[ LIVE ]</span>
+          <div class="project-title">Capture The Flag - Training</div>
+          <p class="project-desc">Entraînement continu sur les plateformes Root-Me et TryHackMe. Focus sur le Web et l'Escalade de Privilèges.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">CTF</span>
+            <span class="tech-tag">PrivEsc</span>
+            <span class="tech-tag">Cyber-Training</span>
+          </div>
+          <a href="#" class="project-link">&gt; VIEW_BADGES</a>
+        </div>
+
+        <div class="project-card">
+          <span class="project-status">[ COMPLETED ]</span>
+          <div class="project-title">Test d'intrusion Linux</div>
+          <p class="project-desc">Recherche &amp; exploitation de vulnérabilité d'une machine mise à disposition. C'est un entrainement au Boot-to-Root.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Intrusion</span>
+            <span class="tech-tag">Boot-to-Root</span>
+            <span class="tech-tag">Linux</span>
+          </div>
+          <a href="../storage/intrusion.pdf" class="project-link">&gt; VIEW_REPORT</a>
+        </div>
+
+      </div><!-- .projects-grid -->
+
+      <div class="ctf-zone">
+        <button id="ctf-button" class="ctf-btn">Capture Me</button>
+        <div id="flag-display" class="flag-display">
+          <span class="flag-label">&gt; FLAG FOUND:</span> B_SYSTEM{C4TCH_M3_IF_YOU_C4N}
+        </div>
+      </div>
+
+    </div><!-- #content -->
+  </div><!-- #terminal -->
+
+  <script src="../main.js"></script>
+</body>
+</html>
