@@ -548,8 +548,14 @@ body.page-index {
 .bottom-left {
   bottom: 0;
   left: 0;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
+  font-weight: normal;
+}
+
+.bottom-left:hover {
+  color: #fff;
+  text-shadow: none;
 }
 
 .bottom-right {
