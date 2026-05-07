@@ -49,8 +49,8 @@ function initLangSwitch() {
     const cvLink = document.getElementById('cv-link');
     if (cvLink) {
       cvLink.href = isFR
-        ? 'storage/CV - 2026.pdf'
-        : 'storage/CV - 2026 - EN.pdf';
+        ? '../storage/CV - 2026.pdf'
+        : '../storage/CV - 2026 - EN.pdf';
     }
   });
 }
@@ -233,7 +233,7 @@ function initLoginPage() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initLangSwitch();
-  initProjectsLoader();   // must run before initTerminalLoader
+  initProjectsLoader();
   initTerminalLoader();
   initPassionTags();
   initTimer();
