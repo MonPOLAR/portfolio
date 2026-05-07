@@ -1,204 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>404 Not Found</title>
-    <link rel="icon" type="image/png" href="storage/favicon.jpg">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <style>
-        body { 
-            background: #000; 
-            color: #ffffff; 
-            font-family: 'Courier New', monospace; 
-            height: 100vh; 
-            margin: 0; 
-            overflow: hidden; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            position: relative; 
-        }
-        
-        .corner { 
-            position: absolute; 
-            padding: 40px; 
-            font-size: 1rem; 
-            letter-spacing: -1px; 
-        }
-
-        .top-left { 
-            top: 0; 
-            left: 0; 
-        }
-        
-        .top-left a { 
-            color: #ffffff; 
-            text-decoration: none; 
-            padding: 5px 10px; 
-            transition: 0.3s; 
-        }
-        
-        .top-right { 
-            top: 0; 
-            right: 0; 
-            font-size: 3rem; 
-            color: #ffffff; 
-            opacity: 1; 
-            font-weight: 900;
-        }
-        
-        .bottom-left { 
-            bottom: 0;
-            left: 0;
-            color: #ffffff;   
-            text-decoration: none;
-        }
-        
-        .bottom-right { 
-            bottom: 0; 
-            right: 0; 
-            color: #CF7AFF; 
-        }
-
-        .glitch-wrapper {
-            text-align: center; 
-            position: relative; 
-        }
-        
-        .glitch { 
-            font-size: 8rem;
-            font-weight: 900;
-            margin: 0; 
-            position: relative;
-            color: #ffffff;
-            letter-spacing: -5px;
-        }
-
-        .glitch::before, .glitch::after {
-            content: "404 ERROR"; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%;
-            height: 100%;
-            background: black; 
-            clip: rect(0, 900px, 0, 0); 
-        }
-
-        .glitch::before {
-            clip: rect(44px, 9999px, 56px, 0);
-            left: -2px; 
-            text-shadow: -2px 0 #CF7AFF;
-            animation: glitch-anim 2s infinite linear alternate-reverse;
-        }
-        
-        .glitch::after {
-            clip: rect(44px, 9999px, 56px, 0);
-            left: -2px; 
-            text-shadow: -2px 0 #ffffff;
-            animation: glitch-anim 3s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-anim {
-            0% { clip: rect(10px, 9999px, 20px, 0); transform: skew(0.5deg); }
-            20% { clip: rect(30px, 9999px, 40px, 0); transform: skew(-0.5deg); }
-            40% { clip: rect(60px, 9999px, 70px, 0); transform: skew(0.8deg); }
-            60% { clip: rect(15px, 9999px, 25px, 0); transform: skew(-0.2deg); }
-            80% { clip: rect(80px, 9999px, 90px, 0); transform: skew(0.4deg); }
-            100% { clip: rect(45px, 9999px, 55px, 0); transform: skew(-0.8deg); }
-        }
-
-        .status-text { 
-            font-size: 1rem; 
-            color: #CF7AFF; 
-            letter-spacing: -1px; 
-            margin-top: -10px; 
-        }
-
-        .status-link {
-            color: #CF7AFF;
-            text-decoration: none;
-            font-weight: normal;
-        }
-
-        .status-link:hover {
-            color: #CF7AFF;
-            text-shadow: none;
-        }    
-    </style>
+  <meta charset="UTF-8">
+  <title>404 Not Found</title>
+  <link rel="icon" type="image/png" href="storage/favicon.jpg">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
+
 <!-- FLAG{404_FL4G_N0T_F0UND_JK} -->
-<body>
-    <div class="corner top-left">
-        <a href="wrongway.html">172.16.1.195/home.html</a>
+
+<body class="page-index">
+
+  <div class="corner top-left">
+    <a href="404/wrongway.html">172.16.1.195/home.html</a>
+  </div>
+
+  <div class="corner top-right">B</div>
+
+  <div class="glitch-wrapper">
+    <h1 class="glitch" data-text="404 ERROR">404 ERROR</h1>
+    <div class="status-text">
+      <p>CRITICAL_SYSTEM_FAILURE</p>
+      <p>Oops! The page you're looking for is not here. Go Back to <a href="404/home.html" class="status-link">HOME</a>!</p>
     </div>
+  </div>
 
-    <div class="corner top-right">B</div>
+  <div class="corner bottom-left">
+    <a href="404/bethesavior.html">Time before the website's implosion : <span id="timer">00:12:00:00</span></a>
+  </div>
 
-   <div class="glitch-wrapper">
-        <h1 class="glitch" data-text="404 ERROR">404 ERROR</h1>
-        <div class="status-text">
-            <p>CRITICAL_SYSTEM_FAILURE</p>
-            <p>Oops! The page you're looking for is not here. Go Back to <a href="home.html" class="status-link">HOME</a>!</p>
-        </div>   
-    </div>
+  <div class="corner bottom-right" id="date"></div>
 
-    <div class="corner bottom-left">
-        <a href="bethesavior.html">Time before the website's implosion : <span id="timer">00:12:00:00</span></a>
-    </div>
-
-    <div class="corner bottom-right" id="date"></div>
-
-    <script>
-        // Timer
-        let startTime = Date.now();
-        const duration = 12 * 60 * 1000; 
-        const timerElement = document.getElementById('timer');
-        
-       function updateTimer() {
-            let now = Date.now();
-            let diff = duration - (now - startTime);
-            
-            let isNegative = diff < 0;
-            let absDiff = Math.abs(diff);
-
-            let h = Math.floor(absDiff / 3600000);
-            let m = Math.floor((absDiff % 3600000) / 60000);
-            let s = Math.floor((absDiff % 60000) / 1000);
-            let ms = Math.floor((absDiff % 1000) / 10);
-
-        timerElement.innerText = 
-                (isNegative ? "-" : "") + 
-                (h < 10 ? '0' : '') + h + ":" + 
-                (m < 10 ? '0' : '') + m + ":" + 
-                (s < 10 ? '0' : '') + s + ":" + 
-                (ms < 10 ? '0' : '') + ms;
-        }
-
-        setInterval(updateTimer, 10);
-
-        // Date
-        const dateElement = document.getElementById('date');
-        const today = new Date().toLocaleDateString('fr-FR');
-
-        fetch('https://ipapi.co/json/')
-            .then(response => {
-                if (!response.ok) throw new Error();
-                return response.json();
-            })
-            .then(data => {
-                // Affiche la ville et le pays si trouvés, sinon ERROR
-                if (data.network && data.city) {
-                    dateElement.innerText = `${today} | ${data.network.toUpperCase()} - ${data.city.toUpperCase()}`;
-                } else {
-                    dateElement.innerText = `${today} | ERROR`;
-                }
-            })
-            .catch(() => {
-                // En cas d'AdBlocker ou de problème réseau
-                dateElement.innerText = `${today} | ERROR`;
-            }); 
-
-     </script>
+  <script src="main.js"></script>
 </body>
 </html>
