@@ -624,3 +624,159 @@ body.page-index {
   color: #CF7AFF;
   text-shadow: none;
 }
+
+/** SECRET ARCHIVE (VICTORY) PAGE SPECIFIC **/
+
+body.page-victory {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+}
+ 
+body.page-victory::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 100, 0.015) 2px,
+    rgba(0, 255, 100, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+.victory-wrapper {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1.2s ease forwards;
+}
+ 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+.system-status {
+  font-size: 0.8rem;
+  color: #00ff64;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.4s forwards;
+}
+ 
+.victory-title {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #00ff64;
+  letter-spacing: -3px;
+  margin: 0;
+  text-shadow: 0 0 30px rgba(0, 255, 100, 0.5), 0 0 60px rgba(0, 255, 100, 0.2);
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.8s forwards;
+}
+ 
+.victory-sub {
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 1.2s forwards;
+}
+ 
+.divider {
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #00ff64, transparent);
+  margin: 30px auto;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 1.5s forwards;
+}
+ 
+.flag-box {
+  border: 1px solid #00ff64;
+  padding: 20px 40px;
+  display: inline-block;
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.15), inset 0 0 20px rgba(0, 255, 100, 0.03);
+  opacity: 0;
+  animation: fadeIn 0.8s ease 1.8s forwards;
+}
+ 
+.flag-label {
+  font-size: 0.7rem;
+  color: #00ff64;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  display: block;
+}
+ 
+.flag-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+ 
+.log-lines {
+  margin-top: 40px;
+  font-size: 0.75rem;
+  color: #444;
+  line-height: 2;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 2.2s forwards;
+}
+ 
+.log-lines span {
+  display: block;
+}
+ 
+.log-lines .ok {
+  color: #00ff64;
+}
+ 
+.corner-tl {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  font-size: 0.8rem;
+  color: #00ff64;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 2.5s forwards;
+}
+ 
+.corner-br {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  font-size: 0.8rem;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 2.5s forwards;
+}
+ 
+.back-home {
+  display: inline-block;
+  margin-top: 35px;
+  color: #00ff64;
+  text-decoration: none;
+  font-size: 0.8rem;
+  border: 1px solid #00ff64;
+  padding: 8px 20px;
+  transition: background 0.3s, color 0.3s;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 2.8s forwards;
+}
+ 
+.back-home:hover {
+  background: #00ff64;
+  color: #000;
+}
