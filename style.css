@@ -1,0 +1,626 @@
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 40px;
+  line-height: 1.6;
+}
+
+.lang-fr {
+  display: none;
+}
+
+body.fr-mode .lang-fr {
+  display: inline-block;
+}
+
+body.fr-mode .lang-en {
+  display: none;
+}
+ 
+/** NAVIGATION **/
+
+nav {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 10px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #CF7AFF;
+  text-decoration: none;
+  margin-right: 25px;
+  font-size: 0.9rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #CF7AFF;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+}
+
+.control-btn {
+  font-size: 0.9rem;
+  color: #E0E0E0;
+  font-weight: 900;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+.control-btn:hover {
+  color: #ff4444;
+  text-shadow: 0 0 10px #ff4444;
+  transform: scale(1.05);
+}
+
+/** TERMINAL LOADER **/
+
+#loading-text {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/** SHARED CONTENT COMPONENTS **/
+
+.prompt {
+  color: #CF7AFF;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.command {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}
+
+.section {
+  margin-bottom: 80px;
+  display: none;
+}
+
+.title {
+  color: #CF7AFF;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-block {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.skills-section {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.job-card {
+  border-left: 2px solid #CF7AFF;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.job-company {
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.job-date {
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.job-desc {
+  color: #ccc;
+  margin-top: 5px;
+  font-size: 0.95rem;
+}
+
+.passions-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.passion-tag {
+  border: 1px solid #CF7AFF;
+  color: #CF7AFF;
+  padding: 5px 15px;
+  font-size: 0.85rem;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.passion-tag:hover {
+  background: #CF7AFF;
+  color: #000;
+}
+
+.passion-tag.active {
+  background: #CF7AFF;
+  color: #000;
+  box-shadow: 0 0 10px #CF7AFF;
+}
+
+#passion-description {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px dashed #CF7AFF;
+  background: rgba(207, 122, 255, 0.05);
+  color: #ccc;
+  font-size: 0.9rem;
+  display: none;
+  min-height: 50px;
+}
+
+/** ABOUT PAGE SPECIFIC **/
+
+.about-container {
+  max-width: 800px;
+}
+
+.bio-box {
+  border-left: 2px solid #CF7AFF;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.bio-text {
+  color: #ccc;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.bio-text strong {
+  color: #CF7AFF;
+}
+
+.job-company.large {
+  font-size: 1.2rem;
+}
+
+.job-desc.small {
+  font-size: 0.85rem;
+}
+
+.status-line {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 12px 25px;
+  border: 1px solid #CF7AFF;
+  color: #CF7AFF;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cv-button:hover {
+  background: #CF7AFF;
+  color: #000;
+  box-shadow: 0 0 15px rgba(207, 122, 255, 0.5);
+}
+
+#content {
+  display: none;
+  max-width: 1100px;
+}
+
+/** PROJECTS PAGE SPECIFIC **/
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-card {
+  border: 1px solid #1a1a1a;
+  padding: 20px;
+  background: #050505;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  border-color: #CF7AFF;
+  box-shadow: 0 0 15px rgba(207, 122, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.project-status {
+  font-size: 0.7rem;
+  color: #CF7AFF;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.project-desc {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 20px;
+  min-height: 80px;
+}
+
+.tech-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tech-tag {
+  font-size: 0.7rem;
+  background: #1a1a1a;
+  color: #CF7AFF;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.project-link {
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-top: 1px solid #1a1a1a;
+  padding-top: 15px;
+}
+
+.project-link:hover {
+  color: #CF7AFF;
+}
+
+.ctf-zone {
+  margin-top: 100px;
+  text-align: center;
+  border-top: 1px dashed #1a1a1a;
+  padding-top: 40px;
+}
+
+.ctf-btn {
+  background: transparent;
+  border: 1px solid #CF7AFF;
+  color: #CF7AFF;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  transition: background 0.1s ease;
+  position: relative;
+  z-index: 100;
+}
+
+.ctf-btn:hover {
+  background: rgba(207, 122, 255, 0.1);
+}
+
+.flag-display {
+  display: none;
+  margin-top: 20px;
+  color: #00ff00;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.flag-display .flag-label {
+  color: #CF7AFF;
+}
+
+/** WRONGWAY PAGE SPECIFIC **/
+
+body.page-wrongway {
+  padding: 40px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrongway-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wrongway-glitch-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.status-code {
+  font-weight: 900;
+  font-size: 1.5rem;
+  position: relative;
+  color: #ffffff;
+  display: inline-block;
+}
+
+.status-code::before,
+.status-code::after {
+  content: "ERROR_CODE: WRONG_WAY";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.status-code::before {
+  left: 2px;
+  text-shadow: -1px 0 #CF7AFF;
+  clip: rect(10px, 9999px, 20px, 0);
+  animation: glitch-anim-sm 2s infinite linear alternate-reverse;
+}
+
+.status-code::after {
+  left: -2px;
+  text-shadow: 1px 0 #ffffff;
+  clip: rect(25px, 9999px, 35px, 0);
+  animation: glitch-anim-sm 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-sm {
+  0%   { clip: rect(5px,  9999px, 15px, 0); transform: skew(0.2deg); }
+  50%  { clip: rect(20px, 9999px, 30px, 0); transform: skew(-0.2deg); }
+  100% { clip: rect(10px, 9999px, 25px, 0); transform: skew(0.1deg); }
+}
+
+.log-entry {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  white-space: pre;
+}
+
+.back-link {
+  color: #ffffff;
+  text-decoration: none;
+  margin-top: 40px;
+  display: inline-block;
+  font-size: 0.85rem;
+  transition: background 0.2s, color 0.2s;
+  width: fit-content;
+}
+
+.back-link:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/** BETHESAVIOR PAGE SPECIFIC **/
+
+body.page-bethesavior {
+  padding: 0;
+  color: #CF7AFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  border: 1px solid #CF7AFF;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(207, 122, 255, 0.2);
+  width: 350px;
+}
+
+.login-box h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Courier New', monospace;
+}
+
+.input-group input:focus {
+  border-color: #CF7AFF;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #CF7AFF;
+  color: #CF7AFF;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  transition: background 0.3s, color 0.3s;
+}
+
+.login-btn:hover {
+  background: #CF7AFF;
+  color: #000;
+}
+
+#error-msg {
+  color: #ff4444;
+  font-size: 0.75rem;
+  margin-top: 15px;
+  text-align: center;
+  display: none;
+}
+
+/** INDEX (404) PAGE SPECIFIC **/
+body.page-index {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+}
+
+.corner {
+  position: absolute;
+  padding: 40px;
+  font-size: 1rem;
+  letter-spacing: -1px;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-left a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  font-size: 3rem;
+  color: #ffffff;
+  opacity: 1;
+  font-weight: 900;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  color: #CF7AFF;
+}
+
+.glitch-wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.glitch {
+  font-size: 8rem;
+  font-weight: 900;
+  margin: 0;
+  position: relative;
+  color: #ffffff;
+  letter-spacing: -5px;
+}
+
+.glitch::before,
+.glitch::after {
+  content: "404 ERROR";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::before {
+  clip: rect(44px, 9999px, 56px, 0);
+  left: -2px;
+  text-shadow: -2px 0 #CF7AFF;
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  clip: rect(44px, 9999px, 56px, 0);
+  left: -2px;
+  text-shadow: -2px 0 #ffffff;
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0%   { clip: rect(10px, 9999px, 20px, 0); transform: skew(0.5deg); }
+  20%  { clip: rect(30px, 9999px, 40px, 0); transform: skew(-0.5deg); }
+  40%  { clip: rect(60px, 9999px, 70px, 0); transform: skew(0.8deg); }
+  60%  { clip: rect(15px, 9999px, 25px, 0); transform: skew(-0.2deg); }
+  80%  { clip: rect(80px, 9999px, 90px, 0); transform: skew(0.4deg); }
+  100% { clip: rect(45px, 9999px, 55px, 0); transform: skew(-0.8deg); }
+}
+
+.status-text {
+  font-size: 1rem;
+  color: #CF7AFF;
+  letter-spacing: -1px;
+  margin-top: -10px;
+}
+
+.status-link {
+  color: #CF7AFF;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.status-link:hover {
+  color: #CF7AFF;
+  text-shadow: none;
+}
