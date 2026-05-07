@@ -211,8 +211,8 @@ function initLoginPage() {
     const hashP = CryptoJS.SHA256(p).toString();
 
     if (
-      hashU === '3f32c3886566d80482811456006093952336331901a1f0a2d2005080f5556f8f' &&
-      hashP === 'd50269387431e5f8f5337e604f7d6a5992923976378e7f1e739958316f733198'
+      hashU === '449d911a5a57c56b9eb31294052d9d85385f033902f80f3b1d2156153445fdad' &&
+      hashP === 'f144a6907dc4284d1f9fe6a7d9b9ff53c02c1d07ba68f24d413d7ff7f757a782'
     ) {
       alert('ACCESS GRANTED.');
       window.location.href = 'secret_archive.html';
