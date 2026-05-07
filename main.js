@@ -10,8 +10,9 @@ function initTerminalLoader() {
   const lines = [
     '> Initializing connection...',
     '> Decrypting secure layers...',
-    '> Access granted to: USER_B',
+    '> Access granted to user : user_b',
     '> Loading profile data...'
+    '> Try with password : bravo...'
   ];
 
   let lineIdx = 0;
