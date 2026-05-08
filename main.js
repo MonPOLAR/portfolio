@@ -220,7 +220,7 @@ function initLoginPage() {
       hashP === 'f144a6907dc4284d1f9fe6a7d9b9ff53c02c1d07ba68f24d413d7ff7f757a782'
     ) {
       alert('ACCESS GRANTED.');
-      window.location.href = '/404/secret_archive.html';
+      window.location.href = '/404/systemsaved.html';
     } else {
       err.style.display = 'block';
 
