@@ -11,8 +11,8 @@ function initTerminalLoader() {
     '> Initializing connection...',
     '> Decrypting secure layers...',
     '> Access granted to user : user_b',
-    '> Loading profile data...'
-    '> Try with password : bravo...'
+    '> Loading profile data...',
+    '> Try with passcode : bravo...',
   ];
 
   let lineIdx = 0;
