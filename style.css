@@ -548,9 +548,12 @@ body.page-index {
 .bottom-left {
   bottom: 0;
   left: 0;
-  color: #fff;
+}
+
+.bottom-left a {
+  color: #ffffff;
   text-decoration: none;
-  font-weight: normal;
+  transition: color 0.3s;
 }
 
 .bottom-left:hover {
