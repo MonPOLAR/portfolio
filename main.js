@@ -12,7 +12,7 @@ function initTerminalLoader() {
     '> Decrypting secure layers...',
     '> Access granted to user : user_b',
     '> Loading profile data...',
-    '> Try with passcode : bravo...',
+    '> Try with password : bravo...'
   ];
 
   let lineIdx = 0;
@@ -239,6 +239,31 @@ function initLoginPage() {
   });
 }
 
+/** Index page — hint button **/
+
+function initHintButton() {
+  const btn   = document.getElementById('hint-btn');
+  const popup = document.getElementById('hint-popup');
+  const close = document.getElementById('hint-close');
+  if (!btn || !popup) return;
+
+  btn.addEventListener('click', () => {
+    popup.classList.toggle('visible');
+  });
+
+  close.addEventListener('click', (e) => {
+    e.stopPropagation();
+    popup.classList.remove('visible');
+  });
+
+  // Close if clicking outside
+  document.addEventListener('click', (e) => {
+    if (!popup.contains(e.target) && e.target !== btn) {
+      popup.classList.remove('visible');
+    }
+  });
+}
+
 /** INIT — runs on every page, each function guards itself with element existence checks **/
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -250,4 +275,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initDateDisplay();
   initCtfButton();
   initLoginPage();
+  initHintButton();
 });
