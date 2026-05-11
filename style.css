@@ -507,6 +507,7 @@ body.page-bethesavior {
 }
 
 /** INDEX (404) PAGE SPECIFIC **/
+
 body.page-index {
   height: 100vh;
   overflow: hidden;
@@ -548,12 +549,15 @@ body.page-index {
 .bottom-left {
   bottom: 0;
   left: 0;
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
 }
 
+/* Fix: force le lien enfant à hériter du style du parent */
 .bottom-left a {
   color: #ffffff;
   text-decoration: none;
-  transition: color 0.3s;
 }
 
 .bottom-left:hover {
@@ -788,4 +792,78 @@ body.page-victory::before {
 .back-home:hover {
   background: #00ff64;
   color: #000;
+}
+
+/** HINT BUTTON (index page) **/
+
+.hint-btn {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #CF7AFF;
+  background: #000;
+  color: #CF7AFF;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+  z-index: 50;
+}
+
+.hint-btn:hover {
+  background: rgba(207, 122, 255, 0.1);
+  box-shadow: 0 0 12px rgba(207, 122, 255, 0.4);
+}
+
+.hint-popup {
+  position: fixed;
+  right: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0a0a0a;
+  border: 1px solid #CF7AFF;
+  box-shadow: 0 0 20px rgba(207, 122, 255, 0.15);
+  padding: 18px 22px;
+  width: 280px;
+  font-size: 0.8rem;
+  z-index: 51;
+  display: none;
+}
+
+.hint-popup.visible {
+  display: block;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+.hint-title {
+  color: #CF7AFF;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  letter-spacing: 1px;
+}
+
+.hint-text {
+  color: #ccc;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.hint-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: #555;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: color 0.2s;
+}
+
+.hint-close:hover {
+  color: #fff;
 }
