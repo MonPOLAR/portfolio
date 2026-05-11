@@ -163,7 +163,6 @@ function initProjectsLoader() {
     }
   }
 
-  // Prevent the generic loader from also running on this page
   loader._projectsLoaderActive = true;
   typeLog();
 }
@@ -197,7 +196,7 @@ function initCtfButton() {
   });
 }
 
-/** Bethesavior page — credential check with SHA-256 **/
+/** Bethesavior page — credential **/
 
 function initLoginPage() {
   const loginBtn = document.querySelector('.login-btn');
@@ -264,7 +263,7 @@ function initHintButton() {
   });
 }
 
-/** INIT — runs on every page, each function guards itself with element existence checks **/
+/** INIT **/
 
 document.addEventListener('DOMContentLoaded', () => {
   initLangSwitch();
