@@ -893,6 +893,12 @@ body.page-victory::before {
   line-height: 1.6;
 }
 
+.hint-text-a {
+  color: #ccc;
+  margin: 0 0 10px 0;
+  line-height: 1.6;
+}
+
 .hint-counter {
   color: #CF7AFF;
   font-size: 0.7rem;
