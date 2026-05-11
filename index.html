@@ -32,12 +32,17 @@
 
   <div class="corner bottom-right" id="date"></div>
 
-  <!-- Hint button -->
   <div class="hint-btn" id="hint-btn" title="Need a hint?">💡</div>
   <div class="hint-popup" id="hint-popup">
-    <span class="hint-close" id="hint-close">✕</span>
-    <p class="hint-title">&gt; HINT_UNLOCKED</p>
-    <p class="hint-text">The flag is hidden in plain sight... Have you tried reading what's the eyes cannot see à the first time?</p>
+    <div class="hint-header">
+      <p class="hint-title">&gt; HINT_UNLOCKED</p>
+      <div class="hint-controls">
+        <span class="hint-nav" id="hint-next">&#8250;</span>
+        <span class="hint-close" id="hint-close">✕</span>
+      </div>
+    </div>
+    <p class="hint-text" id="hint-text"></p>
+    <p class="hint-counter" id="hint-counter">1 / 3</p>
   </div>
 
   <script src="main.js"></script>
