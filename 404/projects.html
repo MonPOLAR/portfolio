@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>PROJECTS</title>
@@ -11,11 +11,14 @@
   <nav>
     <div class="nav-container">
       <div class="nav-links">
-        <a href="home.html">&gt; HOME</a>
-        <a href="about.html">&gt; ABOUT</a>
-        <a href="projects.html">&gt; PROJECTS</a>
+        <a href="home.html">&gt; <span class="lang-en">HOME</span><span class="lang-fr">ACCUEIL</span></a>
+        <a href="about.html">&gt; <span class="lang-en">ABOUT</span><span class="lang-fr">À PROPOS</span></a>
+        <a href="projects.html">&gt; <span class="lang-en">PROJECTS</span><span class="lang-fr">PROJETS</span></a>
       </div>
-      <a href="../index.html" class="control-btn exit-btn"> [ EXIT ] </a>
+      <div class="nav-controls">
+        <a id="lang-switch" class="control-btn">[ FR ]</a>
+        <a href="../index.html" class="control-btn"> [ EXIT ] </a>
+      </div>
     </div>
   </nav>
 
@@ -28,9 +31,15 @@
       <div class="projects-grid">
 
         <div class="project-card">
-          <span class="project-status">[ COMPLETED ]</span>
-          <div class="project-title">Architecture Active Directory : ValorElec (entreprise non existante)</div>
-          <p class="project-desc">Déploiement d'une infrastructure Windows Server. Automatisation de la création d'OU et d'utilisateurs via <strong>PowerShell</strong>. Mise en place de GPO restrictives (Hardening utilisateur).</p>
+          <span class="project-status">[ <span class="lang-en">COMPLETED</span><span class="lang-fr">TERMINÉ</span> ]</span>
+          <div class="project-title">
+            <span class="lang-en">Active Directory Architecture : ValorElec (fictional company)</span>
+            <span class="lang-fr">Architecture Active Directory : ValorElec (entreprise non existante)</span>
+          </div>
+          <p class="project-desc">
+            <span class="lang-en">Deployment of a Windows Server infrastructure. Automation of OU and user creation via <strong>PowerShell</strong>. Implementation of restrictive GPOs (User Hardening).</span>
+            <span class="lang-fr">Déploiement d'une infrastructure Windows Server. Automatisation de la création d'OU et d'utilisateurs via <strong>PowerShell</strong>. Mise en place de GPO restrictives (Hardening utilisateur).</span>
+          </p>
           <div class="tech-tags">
             <span class="tech-tag">Active Directory</span>
             <span class="tech-tag">PowerShell</span>
@@ -40,33 +49,48 @@
         </div>
 
         <div class="project-card">
-          <span class="project-status">[ COMPLETED ]</span>
-          <div class="project-title">Hardening &amp; Bastionnage Linux</div>
-          <p class="project-desc">Sécurisation d'un noyau Linux : configuration SSH (clés uniquement), pare-feu IPTables/UFW, et désactivation des services non essentiels (CIS Benchmark).</p>
+          <span class="project-status">[ <span class="lang-en">COMPLETED</span><span class="lang-fr">TERMINÉ</span> ]</span>
+          <div class="project-title">
+            <span class="lang-en">Linux Hardening &amp; Bastioning</span>
+            <span class="lang-fr">Hardening &amp; Bastionnage Linux</span>
+          </div>
+          <p class="project-desc">
+            <span class="lang-en">Securing a Linux kernel: SSH configuration (keys only), IPTables/UFW firewall, and disabling non-essential services (CIS Benchmark).</span>
+            <span class="lang-fr">Sécurisation d'un noyau Linux : configuration SSH (clés uniquement), pare-feu IPTables/UFW, et désactivation des services non essentiels (CIS Benchmark).</span>
+          </p>
           <div class="tech-tags">
             <span class="tech-tag">Linux</span>
             <span class="tech-tag">Hardening</span>
             <span class="tech-tag">SSH Security</span>
           </div>
-          <a href="../storage/hardening.pdf" class="project-link">&gt; VIEW_SECURITY_POLICIES</a>
+          <a href="../storage/hardening.pdf" target="_blank" class="project-link">&gt; VIEW_SECURITY_POLICIES</a>
         </div>
 
         <div class="project-card">
-          <span class="project-status">[ COMPLETED ]</span>
-          <div class="project-title">Exploitation de Vulnérabilités</div>
-          <p class="project-desc">Simulations d'intrusions sur machines vulnérables. Utilisation de <strong>Metasploit</strong>, Nmap et techniques de Pivotement.</p>
+          <span class="project-status">[ <span class="lang-en">COMPLETED</span><span class="lang-fr">TERMINÉ</span> ]</span>
+          <div class="project-title">
+            <span class="lang-en">Vulnerability Exploitation</span>
+            <span class="lang-fr">Exploitation de Vulnérabilités</span>
+          </div>
+          <p class="project-desc">
+            <span class="lang-en">Intrusion simulations on vulnerable machines. Use of <strong>Metasploit</strong>, Nmap and Pivoting techniques.</span>
+            <span class="lang-fr">Simulations d'intrusions sur machines vulnérables. Utilisation de <strong>Metasploit</strong>, Nmap et techniques de Pivotement.</span>
+          </p>
           <div class="tech-tags">
             <span class="tech-tag">Metasploit</span>
             <span class="tech-tag">Pentest</span>
             <span class="tech-tag">Nmap</span>
           </div>
-          <a href="../storage/metasploit.pdf" class="project-link">&gt; ACCESS_EXPLOIT_LOGS</a>
+          <a href="../storage/metasploit.pdf" target="_blank" class="project-link">&gt; ACCESS_EXPLOIT_LOGS</a>
         </div>
 
         <div class="project-card">
-          <span class="project-status">[ LIVE ]</span>
+          <span class="project-status">[ <span class="lang-en">LIVE</span><span class="lang-fr">EN COURS</span> ]</span>
           <div class="project-title">Capture The Flag - Training</div>
-          <p class="project-desc">Entraînement continu sur les plateformes Root-Me et TryHackMe. Focus sur le Web et l'Escalade de Privilèges.</p>
+          <p class="project-desc">
+            <span class="lang-en">Ongoing training on Root-Me and TryHackMe platforms. Focus on Web exploitation and Privilege Escalation.</span>
+            <span class="lang-fr">Entraînement continu sur les plateformes Root-Me et TryHackMe. Focus sur le Web et l'Escalade de Privilèges.</span>
+          </p>
           <div class="tech-tags">
             <span class="tech-tag">CTF</span>
             <span class="tech-tag">PrivEsc</span>
@@ -76,15 +100,40 @@
         </div>
 
         <div class="project-card">
-          <span class="project-status">[ COMPLETED ]</span>
-          <div class="project-title">Test d'intrusion Linux</div>
-          <p class="project-desc">Recherche &amp; exploitation de vulnérabilité d'une machine mise à disposition. C'est un entrainement au Boot-to-Root.</p>
+          <span class="project-status">[ <span class="lang-en">COMPLETED</span><span class="lang-fr">TERMINÉ</span> ]</span>
+          <div class="project-title">
+            <span class="lang-en">Linux Intrusion Test</span>
+            <span class="lang-fr">Test d'intrusion Linux</span>
+          </div>
+          <p class="project-desc">
+            <span class="lang-en">Research &amp; exploitation of a vulnerability on a provided machine. Boot-to-Root training exercise.</span>
+            <span class="lang-fr">Recherche &amp; exploitation de vulnérabilité d'une machine mise à disposition. Entraînement au Boot-to-Root.</span>
+          </p>
           <div class="tech-tags">
             <span class="tech-tag">Intrusion</span>
             <span class="tech-tag">Boot-to-Root</span>
             <span class="tech-tag">Linux</span>
           </div>
-          <a href="../storage/intrusion.pdf" class="project-link">&gt; VIEW_REPORT</a>
+          <a href="../storage/intrusion.pdf" target="_blank" class="project-link">&gt; VIEW_REPORT</a>
+        </div>
+
+        <div class="project-card">
+          <span class="project-status">[ <span class="lang-en">LIVE</span><span class="lang-fr">EN COURS</span> ]</span>
+          <div class="project-title">
+            <span class="lang-en">Client Website — ACB</span>
+            <span class="lang-fr">Site Web Client — ACB</span>
+          </div>
+          <p class="project-desc">
+            <span class="lang-en">Design and deployment of a website for a client, hosted on GitHub Pages (deployment to the upcoming domain). Full front-end development from scratch.</span>
+            <span class="lang-fr">Conception et déploiement d'un site web pour un client, hébergé sur GitHub Pages (déploiement sur son domaine à venir). Développement front-end complet from scratch.</span>
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">GitHub</span>
+          </div>
+          <a href="https://hydrsys.github.io/acb/" target="_blank" class="project-link">&gt; VIEW_LIVE_SITE</a>
         </div>
 
       </div><!-- .projects-grid -->
