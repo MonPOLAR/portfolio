@@ -251,7 +251,7 @@ function initHintButton() {
   if (!btn || !popup) return;
 
   const hints = [
-    "When you are tired, you want to go... home?",
+    "When you are tired, you want to go... ",
     "The flag is hidden in plain sight... Have you tried reading what's the eyes cannot see at the first time?",
     "Sometimes, flags are in pages we don't suspect... did you try some different pages that don't exist?"
   ];
