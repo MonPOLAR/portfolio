@@ -281,10 +281,12 @@ function initHintButton() {
     }
   });
 
-  close.addEventListener('click', (e) => {
-    e.stopPropagation();
-    popup.classList.remove('visible');
-  });
+  if (close) {
+    close.addEventListener('click', (e) => {
+      e.stopPropagation();
+      popup.classList.remove('visible');
+    });
+  }
 
   document.addEventListener('click', (e) => {
     if (!popup.contains(e.target) && e.target !== btn) {
