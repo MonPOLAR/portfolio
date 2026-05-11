@@ -1,4 +1,4 @@
-/* --- Reset & Base --- */
+/** Reset & Base **/
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -554,7 +554,6 @@ body.page-index {
   font-weight: normal;
 }
 
-/* Fix: force le lien enfant à hériter du style du parent */
 .bottom-left a {
   color: #ffffff;
   text-decoration: none;
@@ -638,7 +637,7 @@ body.page-index {
   text-shadow: none;
 }
 
-/** SECRET ARCHIVE (VICTORY) PAGE SPECIFIC **/
+/** SECRET ARCHIVE PAGE SPECIFIC **/
 
 body.page-victory {
   height: 100vh;
@@ -794,7 +793,7 @@ body.page-victory::before {
   color: #000;
 }
 
-/** HINT BUTTON (index page) **/
+/** HINT BUTTON **/
 
 .hint-btn {
   position: fixed;
