@@ -197,7 +197,7 @@ function initCtfButton() {
   });
 }
 
-/** Bethesavior page — credential check with SHA-256 **/
+/** Bethesavior page - Credential **/
 
 function initLoginPage() {
   const loginBtn = document.querySelector('.login-btn');
@@ -242,51 +242,59 @@ function initLoginPage() {
 /** Index page — hint button **/
 
 function initHintButton() {
-  const btn     = document.getElementById('hint-btn');
-  const popup   = document.getElementById('hint-popup');
-  const close   = document.getElementById('hint-close');
-  const next    = document.getElementById('hint-next');
-  const textEl  = document.getElementById('hint-text');
-  const counter = document.getElementById('hint-counter');
-  if (!btn || !popup) return;
+  const btn   = document.getElementById('hint-btn');
+  const popup = document.getElementById('hint-popup');
+  const close = document.getElementById('hint-close');
+  if (!btn || !popup || !close) return;
 
-  const hints = [
-    "When you are tired, you want to go... ",
-    "The flag is hidden in plain sight... Have you tried reading what's the eyes cannot see at the first time?",
-    "Sometimes, flags are in pages we don't suspect... did you try some different pages that don't exist?"
-  ];
+  const isMulti = popup.getAttribute('data-multi') === 'true';
 
-  let current = 0;
+  if (isMulti) {
+    const next    = document.getElementById('hint-next');
+    const textEl  = document.getElementById('hint-text');
+    const counter = document.getElementById('hint-counter');
 
-  function showHint(idx) {
-    textEl.innerText  = hints[idx];
-    counter.innerText = `${idx + 1} / ${hints.length}`;
-    next.style.opacity = idx === hints.length - 1 ? '0.2' : '1';
-    next.style.pointerEvents = idx === hints.length - 1 ? 'none' : 'auto';
-  }
+    const hints = [
+      "When you are tired, you want to go... home?",
+      "The flag is hidden in plain sight... Have you tried reading what's the eyes cannot see at the first time?",
+      "Sometimes, flags are in pages we don't suspect... did you try some different pages that don't exist?"
+    ];
 
-  btn.addEventListener('click', () => {
-    popup.classList.toggle('visible');
-    if (popup.classList.contains('visible')) {
-      current = 0;
-      showHint(current);
+    let current = 0;
+
+    function showHint(idx) {
+      textEl.innerText  = hints[idx];
+      counter.innerText = `${idx + 1} / ${hints.length}`;
+      next.style.opacity      = idx === hints.length - 1 ? '0.2' : '1';
+      next.style.pointerEvents = idx === hints.length - 1 ? 'none' : 'auto';
     }
-  });
 
-  next.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (current < hints.length - 1) {
-      current++;
-      showHint(current);
-    }
-  });
+    btn.addEventListener('click', () => {
+      popup.classList.toggle('visible');
+      if (popup.classList.contains('visible')) {
+        current = 0;
+        showHint(current);
+      }
+    });
 
-  if (close) {
-    close.addEventListener('click', (e) => {
+    next.addEventListener('click', (e) => {
       e.stopPropagation();
-      popup.classList.remove('visible');
+      if (current < hints.length - 1) {
+        current++;
+        showHint(current);
+      }
+    });
+
+  } else {
+    btn.addEventListener('click', () => {
+      popup.classList.toggle('visible');
     });
   }
+
+  close.addEventListener('click', (e) => {
+    e.stopPropagation();
+    popup.classList.remove('visible');
+  });
 
   document.addEventListener('click', (e) => {
     if (!popup.contains(e.target) && e.target !== btn) {
@@ -295,7 +303,7 @@ function initHintButton() {
   });
 }
 
-/** INIT — runs on every page, each function guards itself with element existence checks **/
+/** INIT **/
 
 document.addEventListener('DOMContentLoaded', () => {
   initLangSwitch();
