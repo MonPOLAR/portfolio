@@ -532,13 +532,14 @@ body.page-index::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 240px;
   height: 240px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23FFD400' stroke-width='14' stroke-linecap='round'%3E%3Cpath d='M40 40 C90 70 140 120 200 190 C260 260 300 300 350 330'/%3E%3Cpath d='M150 0 C145 40 140 70 130 100'/%3E%3Cpath d='M210 0 C205 45 200 80 195 110'/%3E%3Cpath d='M270 0 C263 50 258 90 250 130'/%3E%3Cpath d='M330 0 C320 55 310 100 300 150'/%3E%3Cpath d='M320 210 C330 240 345 260 370 275'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: top left;
+  background-position: top right;
   background-size: contain;
+  transform: scaleX(-1);
   pointer-events: none;
   z-index: 1;
 }
