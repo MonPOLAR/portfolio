@@ -373,6 +373,15 @@ function initSolarSystem() {
       link:   { label: '> SECURITY_POLICIES', href: '../storage/hardening.pdf', blank: true },
     },
     {
+      id: 9, cat: 'sysadmin',
+      name: { en: 'Hybrid Cloud Migration', fr: 'Migration Cloud Hybride' },
+      status: { en: 'COMPLETED', fr: 'TERMINÉ' },
+      title:  { en: 'Secure Hybrid Infrastructure', fr: 'Infrastructure Hybride Sécurisée' },
+      desc:   { en: 'Proxmox VE + Microsoft 365 migration, VLAN segmentation, Fortinet, Zabbix/Grafana monitoring, Splunk SIEM.',fr: 'Migration Proxmox VE + Microsoft 365, segmentation VLAN, Fortinet, supervision Zabbix/Grafana, SIEM Splunk.' },
+      tags:   ['Proxmox', 'Microsoft 365', 'Zabbix', 'Fortinet', 'SIEM'],
+      link:   { label: '> TECHNICAL_DOSSIER', href: '../storage/projetb3.pdf', blank: true },
+    },
+    {
       id: 4, cat: 'code',
       name: { en: 'ACB Website', fr: 'Site ACB' },
       status: { en: 'LIVE', fr: 'EN COURS' },
